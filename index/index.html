@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <title>Knights Club 騎士俱樂部</title>
+    </head>
+    <body>
+        <div class="wrapper"><!-- Wrapper start -->
+
+            <!-- Header -->
+            <header class="top">
+                <div class="allTopMenu">
+                    <div class="topMenu">
+                        <ul class="actionMenu">
+                            <li class="actionMenuLi">
+                                <a href="">
+                                    <div class="language">
+                                        <img src="img/iconGlobe.svg" alt="">
+                                        <span class = "languageSpan">zh-TW</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="topLogo">
+                            <img src="img/topLogo.svg" alt="" class="topLogoImg">
+                        </a>
+                        <ul class="actionMenu">
+                            <li class="actionMenuLi">
+                                <div class="search">
+                                    <form action="" class="searchForm">
+                                        <input maxlength="100" placeholder="找商品" class="searchInput">
+                                        <button type = "submit" class="searchButton">
+                                            <img src="img/iconSearch.svg" alt="" class="searchImg">
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+
+                            <li class="actionMenuLi">
+                                <a href="#"><img src="img/iconUser.svg" alt="" class="userImg"></a>
+                            </li>
+
+                            <li class="actionMenuLi">
+                                <a href="#"><img src="img/iconComment.svg" alt="" class="commentImg"></a>
+                            </li>
+
+                            <li class="actionMenuLi">
+                                <a href="#"><img src="img/iconCart.svg" alt="" class="cartImg"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="mainMenu">
+                        <ul class="mainMenuUl">
+                            <li class="mainMenuLi">
+                                <a href="#" class="mainMenuA">關於我們</a>
+                                <ol class="mainMenuDropOl">
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">品牌故事</a></li>
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">安心選帽</a></li>
+                                </ol>
+                            </li>
+                            <li class="mainMenuLi">
+                                <a href="#" class="mainMenuA">商品列表</a>
+                                <ol class="mainMenuDropOl">
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">山車帽</a></li>
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">樂高帽</a></li>
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">3/4安全帽</a></li>
+                                    <li class="mainMenuDropLi"><a href="" class="mainMenuDropA">周邊配件</a></li>
+                                </ol>
+                            </li>
+                            <li class="mainMenuLi"><a href="#" class="mainMenuA">最新消息</a></li>
+                            <li class="mainMenuLi"><a href="#" class="mainMenuA">經銷據點</a></li>
+                            <li class="mainMenuLi"><a href="#" class="mainMenuA">幫你推薦</a></li>
+                            <li class="mainMenuLi"><a href="#" class="mainMenuA">會員專區</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 頁首橫幅 -->
+            <div class="topBanner">
+                <!-- 頁首輪播 -->
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- 內圖 -->
+                        <div class="swiper-slide">
+                            <img src="img/swiper1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/swiper2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/swiper3.jpg" alt="">
+                        </div>
+                        </div>
+                        <!-- 分頁點點 -->
+                        <div class="swiper-pagination"></div>
+                        
+                        <!-- 換頁按鈕 -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    
+                        <!-- 卷軸 -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+                    <div class="topTitle">
+                        <div class="bigTitle">
+                            <h1>騎士俱樂部</h1>
+                            <p>Knights Club</p>
+                        </div>
+                        <h2>打造美好的騎車體驗</h2>
+                        <p>身為一個騎士，騎車不能只是舒適，還要有風格</p>
+                        <h3>安全帽、人身部品…</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>        
+            var mySwiper = new Swiper ('.swiper', {
+                direction: 'horizontal', // 垂直水平切換
+                loop: true, // 循環
+                
+                // 分頁點點
+                pagination: {
+                    el: '.swiper-pagination',
+                    // type: 'bullet',
+                },
+                    
+                // 換頁按鈕
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                    
+                // 卷軸
+                //   scrollbar: {
+                //     el: '.swiper-scrollbar',
+                //   },
+            })        
+        </script>
+    </body>
+</html>
