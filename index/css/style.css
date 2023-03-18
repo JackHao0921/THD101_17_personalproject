@@ -156,8 +156,8 @@ body{
 .mainMenuLi .mainMenuDropOl{
     padding: 15px 20px;
     margin-top: 20px;
-    position: absolute;
     background-color: rgb(0, 0, 0);
+    position: sticky;
     width: 7em;
     opacity: 0;
     transition: all .2s ease-out;
@@ -169,7 +169,6 @@ body{
     visibility: visible;
     opacity: 1;
     transition: all .2s ease-out;
-    position: fixed
 }
 
 .mainMenuDropLi .mainMenuDropA{
@@ -331,6 +330,136 @@ body{
     height: 100%;
 }
 
+/* 復古全罩 */
+.helmetWrapper{}
+
+.helmetWrapper .helmetContent{
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.helmetContent .helmetTitle{
+    display: flex;
+    justify-content:space-between ;
+    margin-bottom: 20px;
+}
+
+.helmetTitle .titleLines{
+    width: 400px;
+    height: 100%;
+    margin: auto 0;
+}
+
+.helmetTitle .helmetTitleContent{
+    font-size: 3em;
+}
+
+.helmetContent .helmetProducts{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content:space-between ;
+    padding: 10px 0;
+
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.helmetProducts .helmetCard{
+    background-color: none;
+    transition: all .2s ease-in;
+    border-radius: 5px;
+    margin: 0 20px;
+    width: 100%;
+}
+
+.helmetCard .helmetLink{
+    text-decoration-line: none;
+    color: black;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.helmetCard:hover{
+    background-color: rgba(255, 255, 255, 0.295);
+    transition: all .2s ease-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.helmetLink .helImgWrapper{
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.helImgWrapper .helImgs{
+    display: block;
+    margin:auto;
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    transform-origin: center center; 
+}
+
+
+.helImgWrapper .helImgs:hover{
+    transform: scale(1.2);
+    /* background-color: black; */
+}
+
+.helmetCard .helDesc{
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.helmetCard .helTitle{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.helmetCard .helPrice{
+    font-size: 1em;
+}
+
+.helmetContent .accessoriesMore{
+    display: block;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 20px auto;
+
+    padding-bottom: 20px;
+}
+
+.accessoriesMore .accessoriesMoreLink{
+    display: block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: none;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.accessoriesMore:hover > .accessoriesMoreLink{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: all .2s ease-out;
+}
+
 /* 周邊配件 */
 .accessoriesWrapper{}
 
@@ -356,16 +485,19 @@ body{
 }
 
 .accessoriesContent .accessoriesProducts{
-    width: 100%;
+    width: 75vw;
     display: flex;
     margin: 0 auto;
     justify-content:space-between ;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .accessoriesProducts .accessoriesCard{
     background-color: none;
     transition: all .2s ease-in;
-
+    border-radius: 5px;
     margin: 0 20px;
 }
 
@@ -378,17 +510,19 @@ body{
 }
 
 .accessoriesCard:hover{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.295);
     transition: all .2s ease-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
+.accessoriesLink .accImgWrapper{
+    height: 250px;
+    width: 300px;
+}
 
 .accImgWrapper .accImgs{
-    width: 70%;
-    transition: all .2s ease-in;
-
     display: block;
-    margin: 20px auto;
+    margin:auto;
 
     width: 100%;
     position: absolute;
@@ -398,11 +532,6 @@ body{
     transform-origin: center center;
 }
 
-.accessoriesLink .accImgWrapper{
-    height: 200px;
-    width: 250px;
-    /* background-color: black; */
-}
 
 .accImgWrapper .accImgs:hover{
     transform: scale(1.2);
@@ -418,11 +547,12 @@ body{
 }
 
 .accessoriesCard .accTitle{
-    
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .accessoriesCard .accPrice{
-
+    font-size: 1em;
 }
 
 .accessoriesContent .accessoriesMore{
@@ -430,6 +560,8 @@ body{
     border: none;
     background-color: rgba(255, 255, 255, 0);
     margin: 20px auto;
+
+    padding-bottom: 20px;
 }
 
 .accessoriesMore .accessoriesMoreLink{
@@ -450,18 +582,24 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     transition: all .2s ease-out;
-
 }
 
 /* 頁尾 */
 .beforeFooter{
     width: 100%;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 20px; */
 }
 
-.beforeFooter .beforeFooterImg{
+.beforeFooter .beforeFooterItiems{
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.beforeFooter .beforeFooterGods{
     display: block;
-    margin: 20px auto;
+    margin: 0px auto;
     width: 20vw;
 }
 
@@ -469,16 +607,18 @@ footer{
     background-image: url(../img/footerbg.jpg);
     background-position: center center;
     width: 100vw;
-    height: 350px;
+    height: 100%;
+    background-size: contain;
     box-sizing: border-box;
     box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.4);
+    padding: 20px 0;
+    margin-top: 20px;
 }
 
 footer .footerContent{
     width: 75vw;
     margin: 0 auto;
     text-align: center;
-    padding: 50px;
 }
 
 .footerContent .footerLogo{
@@ -499,5 +639,5 @@ footer .footerContent{
     color: white;
     font-size: 20px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
 }
