@@ -311,7 +311,7 @@ body{
 .topVideoBuble .topVideoWords{
     text-align: center;
     font-size: 64px;
-    font-weight: bold;
+    font-weight: bolder;
 
     position: relative;
 	top: 50%;
