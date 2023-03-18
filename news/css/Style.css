@@ -276,3 +276,20 @@ footer .footerContent{
 .headConent{
     height: 400px;
 }
+
+.headConent .building{
+    font-size: 60px;
+    text-align: center;
+    animation: building 2s ease-in-out forwards;
+}
+
+@keyframes building{
+    0%{
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
