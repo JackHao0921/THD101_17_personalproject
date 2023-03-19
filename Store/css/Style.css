@@ -254,13 +254,13 @@ footer .footerContent{
 .content{
     width: 75vw;
     margin: 0 auto;
-    padding-top: 50px;
+    /* padding-top: 50px; */
 }
 
 .title{
     display: flex;
     justify-content:space-between ;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .title .titleLines{
@@ -274,7 +274,8 @@ footer .footerContent{
 }
 
 .headConent{
-    height: 400px;
+    /* height: 400px; */
+    padding: 50px;
 }
 
 .headConent .building{
@@ -291,6 +292,38 @@ footer .footerContent{
     100%{
         transform: translateY(0);
         opacity: 1;
-    }
-    
+    }    
 }
+
+.titleImg{
+    width: 100vw;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 內容 */
+.storCard{
+    margin-bottom: 20px;
+}
+
+.title{
+}
+
+.storCard .storH1{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.storCard .storDesc{
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.storDesc .storH2{
+    font-weight: bold;
+}
+
+.storDesc .storAddr{}
+

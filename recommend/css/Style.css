@@ -275,6 +275,7 @@ footer .footerContent{
 
 .headConent{
     height: 400px;
+    margin: 0 auto;
 }
 
 .headConent .building{
@@ -293,4 +294,9 @@ footer .footerContent{
         opacity: 1;
     }
     
+}
+
+.titleImg{
+    width: 100vw;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
 }
