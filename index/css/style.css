@@ -193,7 +193,7 @@ body{
 
 /* ----------頁首橫幅---------- */
 .wrapper .topBanner{
-    background: linear-gradient(90deg, #555, #555, #252525);
+    background: linear-gradient(90deg, #555, #838383, #555);
     /* background-color: #555555; */
     height: calc(45vw - 300px);
     width: 100vw;

@@ -254,13 +254,14 @@ footer .footerContent{
 .content{
     width: 75vw;
     margin: 0 auto;
-    /* padding-top: 50px; */
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
 }
 
-.title{
+/* .title{
     display: flex;
     justify-content:space-between ;
-    /* margin-bottom: 20px; */
 }
 
 .title .titleLines{
@@ -274,7 +275,6 @@ footer .footerContent{
 }
 
 .headConent{
-    /* height: 400px; */
     padding: 50px;
 }
 
@@ -293,7 +293,7 @@ footer .footerContent{
         transform: translateY(0);
         opacity: 1;
     }    
-}
+} */
 
 .titleImg{
     width: 100vw;
@@ -301,8 +301,19 @@ footer .footerContent{
 }
 
 /* 內容 */
+.map{
+    width: 30%;
+    margin: 20px;
+    border: 1px solid rgb(0, 0, 0)
+}
+
+iframe{
+    width: 100%;
+}
+
 .storCard{
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 .title{
@@ -318,12 +329,14 @@ footer .footerContent{
 .storCard .storDesc{
     font-size: 20px;
     margin-bottom: 20px;
-    padding-left: 20px;
 }
 
 .storDesc .storH2{
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
-.storDesc .storAddr{}
+.storDesc .storAddr{
+    padding-left: 10px;
+}
 

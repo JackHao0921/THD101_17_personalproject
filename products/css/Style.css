@@ -257,45 +257,122 @@ footer .footerContent{
     padding-top: 50px;
 }
 
-.title{
-    display: flex;
-    justify-content:space-between ;
-    margin-bottom: 20px;
-}
-
-.title .titleLines{
-    width: 400px;
-    height: 100%;
-    margin: auto 0;
-}
-
-.title .titleContent{
-    font-size: 3em;
-}
-
-.headConent{
-    height: 400px;
-}
-
-.headConent .building{
-    font-size: 60px;
-    text-align: center;
-    animation: building 2s ease-in-out forwards;
-}
-
-@keyframes building{
-    0%{
-        transform: translateY(300px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
-}
-
 .titleImg{
     width: 100vw;
     box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* 內容 */
+
+a{
+    text-decoration: none;
+}
+.headConent{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.headConent .productlist{
+    position: relative;
+    padding: 14px 0;
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 43px;
+    width: 75vw;
+}
+
+.productlist .allProds{
+    color: #999;
+}
+
+.prodsWrapper{
+    display: flex;
+    padding: 0 20px;
+    width: 75vw;
+    margin-bottom: 50px;
+}
+
+.productlist{
+    
+}
+
+.productlist::after{
+    content: '';
+    position: absolute;
+    left: 43px;
+    bottom: 0;
+    width: 100px;
+    border-bottom: 1px solid #979797;
+}
+
+.leftNav{
+    width: 20%;
+    padding: 25px 23px 0;
+}
+
+.leftNavLi{
+    color: #333;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.leftNavA{
+    color: #212121;
+}
+
+.rightProds{
+    width: 78%;
+    padding: 25px 23px 0;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.prodsTitle{
+    width: 100%;
+}
+
+.prodsTitleH1{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.prodsRow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.prodsCards{
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.prodsImg{
+    width: 70%;
+}
+
+.prodsDec{
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: #000;
+}
+
+.prodsH2{}
+
+.prodsP{}
