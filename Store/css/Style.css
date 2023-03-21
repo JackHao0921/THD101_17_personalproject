@@ -10,17 +10,17 @@ body{
 .wrapper{}
 
 /* -----------Header----------- */
-/* 上面ICON跟LOGO */
+/* ----------- 上面ICON跟LOGO ----------- */
 .top{
     background-image: url(../img/topBg.jpg);
     background-position: center center;
-    width: 100vw;
+    width: 100%;
     height: 300px;
     box-sizing: border-box;
 }
 
 .top .allTopMenu{
-    width: 75vw;
+    width: 75%;
     margin: 0 auto;
     /* background-color: rgb(187, 187, 187); */
     
@@ -31,7 +31,7 @@ body{
 }
 
 .allTopMenu .topMenu{
-    width: 75vw;
+    width: 100%;
     display: flex;
     padding: 20px 0;
 
@@ -119,7 +119,7 @@ body{
     transition: all .2s ease-out;
 }
 
-/* 下面MENU */
+/* ----------- 下面MENU ----------- */
 
 .allTopMenu .mainMenu{
     width: 100%;
@@ -191,7 +191,7 @@ body{
     color: white;
 }
 
-/* 頁尾 */
+/* ----------- 頁尾 ----------- */
 .beforeFooter{
     width: 100%;
     display: flex;
@@ -200,20 +200,20 @@ body{
 }
 
 .beforeFooter .beforeFooterItiems{
-    width: 75vw;
+    width: 75%;
     margin: 0 auto;
 }
 
-.beforeFooter .beforeFooterGods{
-    display: block;
-    margin: 0px auto;
-    width: 20vw;
+.beforeFooter .boforeFooterGods{
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 40px;
+    text-align: center;
 }
 
 footer{
     background-image: url(../img/footerbg.jpg);
     background-position: center center;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background-size: contain;
     box-sizing: border-box;
@@ -223,7 +223,7 @@ footer{
 }
 
 footer .footerContent{
-    width: 75vw;
+    width: 75%;
     margin: 0 auto;
     text-align: center;
 }
@@ -249,58 +249,74 @@ footer .footerContent{
     margin-top: 20px;
 }
 
-/* 大標題 */
+/* ----------- 標題Banner ----------- */
+.topBanner{
+    width: 100%;
+    height: 400px;
+    background-image: url("../img/lactionBanner.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow: inset -10px 10px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bannerBox{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.bannerTitleLineBox{
+    height: 64px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerTitleLineBoxUp{
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid #ffffff;
+}
+
+.bannerTitleLineBoxMid{
+    height: 50%;
+    width: 100%;
+}
+
+.bannerTitleLineBoxDown{
+    height: 100%;
+    width: 100%;
+    border-top: 3px solid #ffffff;
+
+}
+
+.bannerTitle{
+    text-align: center;
+    font-size: 64px;
+    color:white;
+    margin:0 40px;
+    font-family: 'Rye', cursive;
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
+    width: 100%;
+}
+
+/* ----------- 內容 ----------- */
 
 .content{
-    width: 75vw;
-    margin: 0 auto;
+    width: 75%;
     display: flex;
-    padding: 20px;
     justify-content: space-between;
+    margin: 50px auto;
 }
-
-/* .title{
-    display: flex;
-    justify-content:space-between ;
-}
-
-.title .titleLines{
-    width: 400px;
-    height: 100%;
-    margin: auto 0;
-}
-
-.title .titleContent{
-    font-size: 3em;
-}
-
-.headConent{
-    padding: 50px;
-}
-
-.headConent .building{
-    font-size: 60px;
-    text-align: center;
-    animation: building 2s ease-in-out forwards;
-}
-
-@keyframes building{
-    0%{
-        transform: translateY(300px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }    
-} */
-
-.titleImg{
-    width: 100vw;
-    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* 內容 */
 .map{
     width: 30%;
     margin: 20px;
@@ -339,4 +355,3 @@ iframe{
 .storDesc .storAddr{
     padding-left: 10px;
 }
-
