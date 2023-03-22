@@ -115,6 +115,14 @@ body{
     transition: all .2s ease-out;
 }
 
+.actionMenuLi .upButt{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
 /* ----------- 下面MENU ----------- */
 .allTopMenu .mainMenu{
     width: 100%;

@@ -1,0 +1,257 @@
+@import url(reset.css);
+
+/* ----------- 整體設定 ----------- */
+
+body{
+    /* background-image: url('../popImg/popBg.jpg'); */
+    width: 100%;
+    line-height: 1.6;
+    font-family: "Noto Sans", "Noto Sans TC", "Noto Sans SC";
+}
+.modal{
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+}
+
+.-modal_style{
+    display: block;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.-modal_nostyle{
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.-modalAni{
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.popup{
+    width: 1000px;
+    padding: 0;
+    border: 0;
+    margin: 0 auto;
+    border-radius:15px;
+    opacity: 0;
+    transition: all 1s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+}
+
+.-popupAni{
+    opacity: 1;
+    position: fixed;
+    top:100px;
+    left:0;
+    transition: all 1s ease;
+}
+
+.popupwrapper{
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../popImg/popBg.jpg');
+    border-radius:15px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+/* ----------- 頁首頁尾 ----------- */
+.popupwrapper .popHeader{
+    display: block;
+    width: 100%;
+    height: 5em;
+    background-image: url('../popImg/popHeadBg.jpg');
+}
+.closeWrapper{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.popupwrapper .popFooter{
+    display: block;
+    width: 100%;
+    height: 2em;
+    background-image: url('../popImg/popFootBg.jpg');
+}
+
+/* 頁首關閉按鈕 */
+.closeWrapper .btnClose{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.btnClose .bi{
+    font-size: 30px;
+    color: white;
+}
+
+.bi:hover{
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+}
+
+/* ----------- 網頁內容 ----------- */
+.popupwrapper .popContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ----------- 左圖內容 ----------- */
+.popContent .popImg{
+    width: 425px;
+    height: 500px;
+    margin-right: 40px;
+    display: block;
+    background-image: url('../popImg/popImg.png');
+    background-size: cover;
+    position: relative;
+}
+.popContent .popSloganBg{
+    color: white;
+    width: 60%;
+    margin: 0 auto;
+    /* background-color: white; */
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    mix-blend-mode: hard-light;
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px white; */
+    opacity: .4;
+}
+.popImg .popImgSlogan{
+    text-align: center;
+    font-family: 'Mr Dafoe', cursive;
+    width: 100%;
+    font-size: 2em;
+    line-height: 90px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7))
+}
+
+/* ----------- 右邊內容 ----------- */
+.popContent .msgContent{
+    width: 40%;
+    padding: 5px;
+    padding-right: 100px;
+}
+.msgContent .msgform{
+    margin-top: 10px;
+}
+
+.msgform .msgCloseButton{}
+
+.msgform .msgPersonInfo{}
+
+.msgPersonInfo .infoTitle{
+    font-weight: bolder;
+    font-size: 32px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+
+.msgPersonInfo .infoDesc{
+    margin: 5px 0;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+.inputTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.msgPersonInfo .msginput{
+    width: 390px;
+    height: 25px;
+    padding: 0 5px;
+    margin: 0;
+    border: 0;
+    
+}
+
+.msginput:focus{
+    /* border: 0; */
+    /* border-bottom: 1px solid #000; */
+}
+
+.msgform .wrongInfo{
+    color: rgb(173, 0, 0);
+    font-size: 16px;
+    line-height: 16px;
+}
+
+
+.msgform .msgComment{
+    margin-bottom: 10px;
+}
+
+.msgComment .textMsg{
+    width: 390px;
+    height: 80px;
+    padding: 2px 5px;
+    white-space: normal;
+    text-align: left;
+    border: 0;
+    resize: none;
+}
+
+.textMsg:focus{
+    /* border: 0; */
+}
+
+.textMsg::placeholder {
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+  }
+
+/* ----------- 送出按鈕 ----------- */
+
+.msgform .submitWrapper{
+    width: 400px;
+    display: flex;
+    height: 30px;
+    padding-top: 40px;
+}
+
+.msgform .sendBtn{
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(70, 70, 70);
+    color: white;
+    width: 100px;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 50px;
+    box-shadow: none;
+}
+
+.msgform .sendBtn:hover{
+    background-color: black;
+    border: 0;
+    
+}
