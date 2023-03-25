@@ -95,20 +95,86 @@
                 </div>
             </div>
             <div class="content">
-                <div class="headConent">
-                    <h1 class="building">網頁建置中</h1>
-
-
+                <div class="headConent">   
+                    <div class="pagetList">
+                        <a href="../index/index.html" class="pageListLink">首頁</a>
+                        <span class="pageSpace">/</span>
+                        <a href="../news/news.html" class="pageListLink">最新消息</a>
+                    </div>
+                </div>
+                <div class="newsWrapper">
+                    <div class="newsContent">
+                        <a href="#" class="newsImg" style="background-image:url(./img/new1.jpg);background-size: 100%; ">
+                            <div class="newsImgDate">
+                                <p class="innerDate">全據點 大優惠！</p>
+                                <div class="betweenDate"></div>
+                                <p class="innerDate">03/19 ~ 04/12</p>
+                            </div>
+                        </a>
+                        <div class="newInfo">
+                            <h1 class="newTitle">山車帽 全品牌大優惠!</h1>
+                            <p class="newDate">2023.03.19 - 2023.04.12</p>
+                            <p class="newDesc">慶賀北市中山店全新開幕，全據點全店山車帽不限品牌一律大大大優惠！</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="newsContent">
+                        <a href="#" class="newsImg" style="background-image:url(./img/new2.jpg);background-size: 100%; ">
+                            <div class="newsImgDate">
+                                <p class="innerDate">中山店 大優惠！</p>
+                                <div class="betweenDate"></div>
+                                <p class="innerDate">03/19 ~ 04/12</p>
+                            </div>
+                        </a>
+                        <div class="newInfo">
+                            <h1 class="newTitle">北市中山店全新開幕!</h1>
+                            <p class="newDate">2023.03.19 - 2023.04.12</p>
+                            <p class="newDesc">慶賀北市中山店全新開幕，全店山車帽不限品牌一律大大大優惠！</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="newsContent">
+                        <a href="#" class="newsImg" style="background-image:url(./img/new3.jpg);background-size: 100%; ">
+                            <div class="newsImgDate">
+                                <p class="innerDate">板橋總店</p>
+                                <div class="betweenDate"></div>
+                                <p class="innerDate">正式開幕</p>
+                            </div>
+                        </a>
+                        <div class="newInfo">
+                            <h1 class="newTitle">板橋總店正式開幕!</h1>
+                            <p class="newDate">2023.03.19</p>
+                            <p class="newDesc">騎士俱樂部，板橋總店正式開幕，全據點不定期優惠活動！</p>
+                            <a href="#">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
+        <script>
+            const newsImgs = document.querySelectorAll('.newsImg');
+            const newsImgDates = document.querySelectorAll('.newsImgDate');
+          
+            newsImgs.forEach(newsImg => {
+                newsImg.addEventListener('mouseenter', () => {
+                    newsImg.style.backgroundSize = '120%';
+                    newsImg.style.boxShadow = 'rgba(0,0,0,1) 0px 0px 20px 0px inset';
+                    newsImg.querySelector("div").style.opacity = '1'; 
+                })
+            });
+            
+            newsImgs.forEach(newsImg => {
+                newsImg.addEventListener('mouseleave', () => {
+                    newsImg.style.backgroundSize = '100%';
+                    newsImg.style.boxShadow = 'rgba(0,0,0,0) 0px 0px 0px 0px inset';
+                    newsImg.querySelector("div").style.opacity = '0'; 
+                })
+            });
+
+
+        </script>
     </body>
     <div class="beforeFooter">
-        <img src="./img/beforeFooterImg.png" alt="" class="beforeFooterItiems">
         <h4 class="boforeFooterGods">Good old days...</h4>
     </div>
     <footer>

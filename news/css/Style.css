@@ -192,7 +192,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* padding-top: 20px; */
+    padding-top: 20px;
 }
 
 .beforeFooter .beforeFooterItiems{
@@ -309,28 +309,122 @@ footer .footerContent{
 .content{
     width: 75%;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .headConent{
-    height: 400px;
     margin: 0 auto;
 }
-
-.headConent .building{
-    font-size: 60px;
-    text-align: center;
-    animation: building 2s ease-in-out forwards;
+/* 導覽列 */
+.pagetList{
+    display: flex;
+    color: #999;
+    font-size: 20px;
 }
 
-@keyframes building{
-    0%{
-        transform: translateY(300px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
+.pagetList .pageListLink{
+    text-decoration: none;
+    color: #999;
+    font-size: 20px;
+}
+
+.pagetList .pageSpace{
+    display: block;
+    color: #999;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.pageListLink:hover{
+    color: black;
+    font-weight: bolder;
+}
+
+/* 最新消息 */
+.newsWrapper{
+    width: 100%;
+}
+
+.newsWrapper .newsContent{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+/* 左圖 */
+.newsContent .newsImg{
+    flex-grow: 1;
+    width: 40%;
+    height: 250px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    transition: all 0.5s ease;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0)
+}
+.newsImg .newsImgDate{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0)
+    mix-blend-mode:lighten;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.newsImgDate .innerDate{
     
+    font-size: 20px;
+    color:black;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.newsImgDate .betweenDate{
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+/* 右消息 */
+.newsContent .newInfo{
+    flex-grow: 1;
+    width: 70%;
+    padding: 20px 40px;
+    padding-right: 0;
+}
+
+.newInfo .newTitle{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 32px;
+    padding-bottom: 10px;
+}
+
+.newInfo .newDesc{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.newInfo a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.newInfo a:hover{
+    text-decoration: underline ;
+    font-weight: bolder;
 }

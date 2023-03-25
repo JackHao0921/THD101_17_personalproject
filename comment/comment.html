@@ -12,8 +12,7 @@
     </head>
     <body>
         <div id="modal" class="modal"></div>
-        <dialog id="popupId" class="popup">
-            <!-- 彈跳視窗 -->
+        <dialog open id="popupId" class="popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -161,38 +160,34 @@
             popupBtn.addEventListener("click", function(){
                 //打開背景
                 var modal = document.getElementById("modal");
-                modal.classList.remove("-modal_nostyle");
                 modal.classList.add("-modal_style");
                 //打開視窗
                 var popupId = document.getElementById("popupId");
-                document.getElementById("popupId").open = true;
-                popupId.classList.add("-popupAni");
-    
+                popupId.classList.add("-popup_style");
+
             });
             //點叉叉關閉視窗
             var btnClose = document.getElementById("btnClose");
             btnClose.addEventListener("click", function(){
-                document.getElementById("popupId").open = false;
+                popupId.classList.remove("-popup_style");
                 modal.classList.remove("-modal_style");
-                modal.classList.add("-modal_nostyle");
             });
             //點黑背景關閉視窗
             var modal = document.getElementById("modal");
             modal.addEventListener("click", function(){
-                document.getElementById("popupId").open = false;
+                popupId.classList.remove("-popup_style");
                 modal.classList.remove("-modal_style");
-                modal.classList.add("-modal_nostyle");
             });
             // ----------- 填空警告
             const msgform = document.getElementById("msgform")
             const wrongInfo = document.getElementById("wrongInfo")
             msgform.addEventListener('submit', (event) => {
                 event.preventDefault(); // 阻止默認送出
-    
+
                 const nameinput = document.getElementById('nameinput');
                 const emailinput = document.getElementById('emailinput');
                 const textinput = document.getElementById('textinput');
-    
+
                 // 檢查輸入是否為空
                 if (nameinput.value.trim() === '' || 
                     emailinput.value.trim() === '' || 

@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
+
 <body>
+
     <button type="button" id="popupBtn" class="popupBtn">Show</button>
     <!-- 彈跳視窗 -->
     <div id="modal" class="modal"></div>
-    <dialog id="popupId" class="popup">
+    <dialog open id="popupId" class="popup">
         <div class="popupwrapper">
             <!-- 頁首 -->
             <div class="popHeader">
@@ -64,27 +66,23 @@
         popupBtn.addEventListener("click", function(){
             //打開背景
             var modal = document.getElementById("modal");
-            modal.classList.remove("-modal_nostyle");
             modal.classList.add("-modal_style");
             //打開視窗
             var popupId = document.getElementById("popupId");
-            document.getElementById("popupId").open = true;
-            popupId.classList.add("-popupAni");
+            popupId.classList.add("-popup_style");
 
         });
         //點叉叉關閉視窗
         var btnClose = document.getElementById("btnClose");
         btnClose.addEventListener("click", function(){
-            document.getElementById("popupId").open = false;
+            popupId.classList.remove("-popup_style");
             modal.classList.remove("-modal_style");
-            modal.classList.add("-modal_nostyle");
         });
         //點黑背景關閉視窗
         var modal = document.getElementById("modal");
         modal.addEventListener("click", function(){
-            document.getElementById("popupId").open = false;
+            popupId.classList.remove("-popup_style");
             modal.classList.remove("-modal_style");
-            modal.classList.add("-modal_nostyle");
         });
         // ----------- 填空警告
         const msgform = document.getElementById("msgform")

@@ -7,65 +7,56 @@ body{
     width: 100%;
     line-height: 1.6;
     font-family: "Noto Sans", "Noto Sans TC", "Noto Sans SC";
+    margin: 0;
+    padding: 0;
+
 }
 .modal{
-    display: none;
+    /* display: none; */
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: all 1s ease;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     position: fixed;
     top:0;
     left:0;
-    z-index: 9999;
+    z-index: -2;
 }
 
 .-modal_style{
-    display: block;
     opacity: 1;
-    transition: opacity 1s ease;
-}
-
-.-modal_nostyle{
-    display: none;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.-modalAni{
-    opacity: 1;
-    transition: all 1s ease;
+    z-index: 9990;
 }
 
 .popup{
-    width: 1000px;
+    width: 60%;
     padding: 0;
     border: 0;
     margin: 0 auto;
     border-radius:15px;
     opacity: 0;
-    transition: all 1s ease;
+    transition: all .3s ease;
     box-sizing: border-box;
     overflow: hidden;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+    
 
     position: fixed;
     top:0;
     left:0;
-    z-index: 9999;
+    z-index: -1;
 }
 
-.-popupAni{
+.-popup_style{
     opacity: 1;
-    position: fixed;
-    top:100px;
-    left:0;
-    transition: all 1s ease;
+    top:2em;
+    z-index: 9999;
 }
 
 .popupwrapper{
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     background-image: url('../popImg/popBg.jpg');
     border-radius:15px;
@@ -116,18 +107,19 @@ body{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    
 }
 
 /* ----------- 左圖內容 ----------- */
 .popContent .popImg{
-    width: 425px;
-    height: 500px;
-    margin-right: 40px;
+    width: 40%;
     display: block;
     background-image: url('../popImg/popImg.png');
     background-size: cover;
+    vertical-align: bottom;
     position: relative;
+    flex-grow: 1;
+    
 }
 .popContent .popSloganBg{
     color: white;
@@ -156,11 +148,10 @@ body{
 /* ----------- 右邊內容 ----------- */
 .popContent .msgContent{
     width: 40%;
-    padding: 5px;
-    padding-right: 100px;
+    padding: 5px 50px;
+    flex-grow: 1;
 }
 .msgContent .msgform{
-    margin-top: 10px;
 }
 
 .msgform .msgCloseButton{}
@@ -185,7 +176,7 @@ body{
 }
 
 .msgPersonInfo .msginput{
-    width: 390px;
+    width: 100%;
     height: 25px;
     padding: 0 5px;
     margin: 0;
@@ -210,8 +201,8 @@ body{
 }
 
 .msgComment .textMsg{
-    width: 390px;
-    height: 80px;
+    width: 100%;
+    height: 90px;
     padding: 2px 5px;
     white-space: normal;
     text-align: left;
@@ -232,10 +223,9 @@ body{
 /* ----------- 送出按鈕 ----------- */
 
 .msgform .submitWrapper{
-    width: 400px;
     display: flex;
     height: 30px;
-    padding-top: 40px;
+    padding: 10px;
 }
 
 .msgform .sendBtn{
