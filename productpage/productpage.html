@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <link rel="stylesheet" href="./css/Style.css">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-        <title>Knights Club | 最新消息</title>
+        <title>Knights Club | BELL BULLITT-經典黑</title>
     </head>
     <body>
         <div class="wrapper"><!-- Wrapper start -->
@@ -38,19 +41,15 @@
                                     </form>
                                 </div>
                             </li>
-
                             <li class="actionMenuLi">
                                 <a href="../member/member.html"><img src="img/iconUser.svg" alt="" class="userImg"></a>
                             </li>
-
                             <li class="actionMenuLi">
                                 <a href="../comment/comment.html"><img src="img/iconComment.svg" alt="" class="commentImg"></a>
                             </li>
-
                             <li class="actionMenuLi">
                                 <a href="../cart/cart.html"><img src="img/iconCart.svg" alt="" class="cartImg"></a>
                             </li>
-
                         </ul>
                     </div>
                     <div class="mainMenu">
@@ -90,50 +89,234 @@
                     </div>
                 </div>
                 <div class="prodpageWrapper">
-                    <div class="leftProdImg"></div>
+                    <!-- 左側商品 -->
+                    <div class="leftProdImgWrapper">
+                        <div class="mainImg" style="background-image: url(./img/prod-black-first.png);"></div>
+                        <div class="prodOtherSideBox">
+                            <button>
+                                <img src="./img/prodSideIcon-first.png" alt="">
+                            </button>
+                            <button>
+                                <img src="./img/prodSideIcon-front.png" alt="">
+                            </button>
+                            <button>
+                                <img src="./img/prodSideIcon-right.png" alt="">
+                            </button>
+                            <button>
+                                <img src="./img/prodSideIcon-back.png" alt="">
+                            </button>
+                            <button>
+                                <img src="./img/prodSideIcon-left.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側商品 -->
                     <div class="rightprodinfor">
                         <h1 class="prodTitle">BELL BULLITT-經典黑</h1>
                         <h2 class="prodPrice">NT＄16,800</h2>
-                        <p class="prodDescTitle">產品顏色</p>
-                        <div class="ProdColors"></div>
-                        <p class="prodDescTitle">產品尺寸</p>
-                        <ul class="prodSizeS">
-                            <button></button>
-                            <li><button>S 54-55</button></li>
-                            <li><button>M 56-57</button></li>
-                            <li><button>L 58-59</button></li>
-                            <li><button>XL 60-61</button></li>
-                            <li><button>XXL 61-62</button></li>
-                        </ul>
-                        <button>尺寸指南</button>
-                        <div class="ProdCount">
-                            <button class="ProdCountBtn">+</button>
-                            <input type="text" class="prodCountInPut" maxlength="5">
-                            <button class="ProdCountBtn">-</button>
-                            <button class="sendNum"></button>
-                        </div>
-                        <div class="productDetail">
-                            <span>商品描述</span>
-                        </div>
-                        <div class="productDetailDesc">
-                            <div>
-                                
-                                <br>
+                        <span class="prodDescTitle">產品顏色</span>
+                        <div class="prodColorbox">
+                            <div class="prodColor">
+                                <a href="#">
+                                    <img src="./img/prodColorIcon-black.png" alt="">
+                                </a>
                             </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div class="prodColor">
+                                <a href="#">
+                                    <img src="./img/prodColorIcon-3line.png" alt="">
+                                </a>
+                            </div>
+                            <div class="prodColor">
+                                <a href="#">
+                                    <img src="./img/prodColorIcon-red.png" alt="">
+                                </a>
+                            </div>
+                            <div class="prodColor">
+                                <a href="#">
+                                    <img src="./img/prodColorIcon-white.png" alt="">
+                                </a>
+                            </div>
+                            <div class="prodColor">
+                                <a href="#">
+                                    <img src="./img/prodColorIcon-yellow.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="prodsizeTitle">
+                            <span class="TitleName">產品尺寸</span>
+                            <a href="#" class="sizeGuide">尺寸指南</a>
+                        </div>
+                        <div class="prodSizes">
+                            <div class="selectBox">
+                                <input type="radio" id="size-s" class="selectInput" name="size" >
+                                <label for="size-s" class="selectLabel" >S 54-55</label>
+                            </div>
+                            <div class="selectBox">
+                                <input type="radio" id="size-m" class="selectInput" name="size" >
+                                <label for="size-m" class="selectLabel" >M 56-57</label>
+                            </div>
+                            <div class="selectBox">
+                                <input type="radio" id="size-l" class="selectInput" name="size" >
+                                <label for="size-l" class="selectLabel" >L 58-59</label>
+                            </div>
+                            <div class="selectBox">
+                                <input type="radio" id="size-xl" class="selectInput" name="size" >
+                                <label for="size-xl" class="selectLabel" >XL 60-61</label>
+                            </div>
+                            <div class="selectBox">
+                                <input type="radio" id="size-xxl" class="selectInput" name="size" >
+                                <label for="size-xxl" class="selectLabel" >XXL 61-62</label>
+                            </div>
+                            <div class="selectBox" style="pointer-events: none;">
+                                <input id="size-none" class="selectInput" name="size" >
+                                <label for="size-none" class="selectLabel" style="background-color: #999;"></label>
+                            </div>
+                        </div>
+                        <div class="ProdNumBox">
+                            <label for="prodNumLabel" style="color: #A9A9A9;" >商品數量</label>
+                            <div class="prodNumPlusAndMinus">
+                                <button id="plus" class="plus">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                                <input type="number"  id="prodNumInput" class="prodNumInput" name="prodNumInput" value="1" maxlength="5" >
+                                <button id="minus" class="minus">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                            </div>
+                            <button class="sendNumBtn">立即購買</button>
+                            <button class="sendNumBtn">加入購物車</button>
+                        </div>
+                        <div class="DetailBoxs">
+                            <div class="DetailBox">
+                                <div class="clickBox">
+                                    <span id="DetailTitle" onclick="toggleArticle()">商品描述：</span>
+                                </div>
+                                <div id="DescBox" class="DescBox" style="display: none; overflow: hidden; height: 0; transition: height 0.5s ease-in-out;">
+                                    <p>•碳纖維或玻璃纖維帽體</p>
+                                    <p>•多密度EPS內裡</p>
+                                    <p>•皮質拉環雙D扣</p>
+                                    <p>•尺寸S~XXL</p>
+                                    <p>•美規DOT</p>
+                                    <p>•歐規ECE</p>
+                                    <p>•台灣CNS</p>
+                                    <p>•公司貨五年原廠保固</p>
+                                </div>
+                            </div>
+                            <div class="DetailBox">
+                                <div class="clickBox">
+                                    <span id="DetailTitle" onclick="toggleArticle()">送貨及付款方式：</span>
+                                </div>
+                                <div id="DescBox" class="DescBox" style="display: none; overflow: hidden; height: 0; transition: height 0.5s ease-in-out;">
+                                    <h3>送貨方式：</h3>
+                                    <ul>
+                                        <li>•7-11 取貨不付款</li>
+                                        <li>•黑貓宅配</li>
+                                    </ul>
+                                    <h3>付款方式：</h3>
+                                    <ul>
+                                        <li>•VISA、Mastercard、JCB</li>
+                                        <li>•PayPal</li>
+                                        <li>•銀行轉帳／ATM</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
+                <!-- 周邊配件 -->
+                <div class="accessoriesWrapper">
+                    <div class="accessoriesContent">
+                        <div class="accessoriesTitle">
+                            <img src="./img/titleLineL.png" alt="" class="titleLines">
+                            <h2 class="accessoriesTitleContent">周邊配件</h2>
+                            <img src="./img/titleLineR.png" alt="" class="titleLines">
+                        </div>
+                        <div class="accessoriesProducts">
+                            <div class="accessoriesCard">
+                                <a href="#" class="accessoriesLink">
+                                    <div class="accImgWrapper">
+                                        <img src="./img/accpro1.png" alt="" class="accImgs">
+                                    </div>
+                                    <div class="accDesc">                                <h3 class="accTitle">CHARITES 泡泡鏡 燻黑</h3>
+                                        <p class="accPrice">NT$ 580</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="accessoriesCard">
+                                <a href="#" class="accessoriesLink">
+                                    <div class="accImgWrapper">
+                                        <img src="./img/accpro2.png" alt="" class="accImgs">
+                                    </div>
+                                    <div class="accDesc">
+                                        <h3 class="accTitle">CHARITES 泡泡鏡 綠色</h3>
+                                        <p class="accPrice">NT$ 580</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="accessoriesCard">
+                                <a href="#" class="accessoriesLink">
+                                    <div class="accImgWrapper">
+                                        <img src="./img/accpro3.png" alt="" class="accImgs">
+                                    </div>
+                                    <div class="accDesc">
+                                        <h3 class="accTitle">Chief RTO-II VISOR 黑</h3>
+                                        <p class="accPrice">NT$ 980</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="accessoriesCard">
+                                <a href="" class="accessoriesLink">
+                                    <div class="accImgWrapper">
+                                        <img src="./img/accpro4.png" alt="" class="accImgs">
+                                    </div>
+                                    <div class="accDesc">
+                                        <h3 class="accTitle">AEGIS 艾癸斯 風鏡 黑色</h3>
+                                        <p class="accPrice">NT$ 2,280</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button class="accessoriesMore">
+                            <a href="" class="accessoriesMoreLink">配件列表</a>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
+            // 數量增減
+            var minusButton = document.getElementById("minus");
+            var plusButton = document.getElementById("plus");
+            var prodNum = document.getElementById("prodNum");
 
+            minusButton.addEventListener("click", function() {
+                if (prodNumInput.value > 1) {
+                    prodNumInput.value--;
+                }
+            });
+
+            plusButton.addEventListener("click", function() {
+                prodNumInput.value++;
+            });
+
+            // 描述下拉
+            const clickBoxs = document.querySelectorAll('.clickBox');
+            const DescBoxs = document.querySelectorAll('.DescBox');
+            clickBoxs.forEach((clickBox, index) => {
+                clickBox.addEventListener('click', function() {
+                    const DescBox = DescBoxs[index];
+                    if (DescBox.style.display === "block") {
+                        DescBox.style.height = "0";
+                        setTimeout(function() {
+                            DescBox.style.display = "none";
+                        }, 500); // 等待動畫結束後再隱藏
+                    } else {
+                        DescBox.style.display = "block";
+                        DescBox.style.height = DescBox.scrollHeight + "px";
+                    }
+                });
+            });
         </script>
     </body>
     <div class="beforeFooter">
