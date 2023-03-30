@@ -317,6 +317,41 @@ footer .footerContent{
     justify-content: space-between;
     margin: 50px auto;
 }
+
+/* 導覽列 */
+.headConent{
+    margin: 0 auto;
+    width: 75%;
+}
+
+.pagetList{
+    width: 100%;
+    display: flex;
+    color: #999;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.pagetList .pageListLink{
+    text-decoration: none;
+    color: #999;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pagetList .pageSpace{
+    display: block;
+    color: #999;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.pageListLink:hover{
+    color: black;
+    
+}
+
+/* 內容 */
 .map{
     width: 30%;
     margin: 20px;

@@ -81,11 +81,11 @@
             <div class="content">
                 <div class="headConent">   
                     <div class="pagetList">
-                        <a href="#" class="pageListLink">商品列表</a>
+                        <a href="../products/products.html" class="pageListLink">商品列表</a>
                         <span class="pageSpace">/</span>
-                        <a href="#" class="pageListLink">樂高帽</a>
+                        <a href="../products/products.html" class="pageListLink">樂高帽</a>
                         <span class="pageSpace">/</span>
-                        <a href="#" class="pageListLink">BELL BULLITT-經典黑</a>
+                        <a href="../productpage/productpage-black.html" class="pageListLink">BELL BULLITT-經典黑</a>
                     </div>
                 </div>
                 <div class="prodpageWrapper">
@@ -145,7 +145,10 @@
                         </div>
                         <div class="prodsizeTitle">
                             <span class="TitleName">產品尺寸</span>
-                            <a href="#" class="sizeGuide">尺寸指南</a>
+                            <span class="sizeGuide">尺寸指南
+                                <img src="./img/sizes.png" alt="">
+                            </span>
+                            
                         </div>
                         <div class="prodSizes">
                             <div class="selectBox">
@@ -190,7 +193,11 @@
                         <div class="DetailBoxs">
                             <div class="DetailBox">
                                 <div class="clickBox">
-                                    <span id="DetailTitle" onclick="toggleArticle()">商品描述：</span>
+                                    <span id="DescBoxUpDown">
+                                        商品描述：
+                                        <i id="DescBoxUpDown" class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                    
                                 </div>
                                 <div id="DescBox" class="DescBox" style="display: none; overflow: hidden; height: 0; transition: height 0.5s ease-in-out;">
                                     <p>•碳纖維或玻璃纖維帽體</p>
@@ -205,7 +212,11 @@
                             </div>
                             <div class="DetailBox">
                                 <div class="clickBox">
-                                    <span id="DetailTitle" onclick="toggleArticle()">送貨及付款方式：</span>
+                                    <span id="DetailTitle">
+                                        送貨及付款方式：
+                                        <i id="DescBoxUpDown" class="bi bi-caret-down-fill"></i>
+                                    </span>
+                                    
                                 </div>
                                 <div id="DescBox" class="DescBox" style="display: none; overflow: hidden; height: 0; transition: height 0.5s ease-in-out;">
                                     <h3>送貨方式：</h3>
@@ -220,6 +231,7 @@
                                         <li>•銀行轉帳／ATM</li>
                                     </ul>
                                 </div>
+                                <div class="DescBoxBBL"></div>
                             </div>
                         </div>
                     </div>
@@ -238,7 +250,8 @@
                                     <div class="accImgWrapper">
                                         <img src="./img/accpro1.png" alt="" class="accImgs">
                                     </div>
-                                    <div class="accDesc">                                <h3 class="accTitle">CHARITES 泡泡鏡 燻黑</h3>
+                                    <div class="accDesc">                                
+                                        <h3 class="accTitle">CHARITES 泡泡鏡 燻黑</h3>
                                         <p class="accPrice">NT$ 580</p>
                                     </div>
                                 </a>
@@ -301,22 +314,23 @@
             });
 
             // 描述下拉
-            const clickBoxs = document.querySelectorAll('.clickBox');
-            const DescBoxs = document.querySelectorAll('.DescBox');
-            clickBoxs.forEach((clickBox, index) => {
+            const clickBoxes = document.querySelectorAll('.clickBox');
+            const descBoxes = document.querySelectorAll('.DescBox');
+            clickBoxes.forEach((clickBox, index) => {
                 clickBox.addEventListener('click', function() {
-                    const DescBox = DescBoxs[index];
-                    if (DescBox.style.display === "block") {
-                        DescBox.style.height = "0";
-                        setTimeout(function() {
-                            DescBox.style.display = "none";
-                        }, 500); // 等待動畫結束後再隱藏
+                    const descBox = descBoxes[index];
+                    if (descBox.style.display === "block") {
+                    descBox.style.height = "0";
+                    setTimeout(function() {
+                        descBox.style.display = "none";
+                    }, 500); // 等待動畫結束後再隱藏
                     } else {
-                        DescBox.style.display = "block";
-                        DescBox.style.height = DescBox.scrollHeight + "px";
+                    descBox.style.display = "block";
+                    descBox.style.height = descBox.scrollHeight + "px";
                     }
                 });
             });
+
         </script>
     </body>
     <div class="beforeFooter">

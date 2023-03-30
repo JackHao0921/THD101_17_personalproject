@@ -253,10 +253,11 @@ footer .footerContent{
     padding-top: 30px;
 }
 
+/* 導覽列 */
 .headConent{
     margin: 0 auto;
 }
-/* 導覽列 */
+
 .pagetList{
     display: flex;
     color: #999;
@@ -268,6 +269,7 @@ footer .footerContent{
     text-decoration: none;
     color: #999;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .pagetList .pageSpace{
@@ -279,6 +281,7 @@ footer .footerContent{
 
 .pageListLink:hover{
     color: black;
+    
 }
 
 /* 商品頁 */
@@ -347,6 +350,7 @@ footer .footerContent{
 .rightprodinfor .prodsizeTitle{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .prodsizeTitle .TitleName{
@@ -355,10 +359,25 @@ footer .footerContent{
 
 .prodsizeTitle .sizeGuide{
     color: #A9A9A9;
+    position: relative;
+    text-decoration: underline;
 }
 
 .prodsizeTitle .sizeGuide:hover{
     color: #000000;
+}
+
+.sizeGuide img{
+    display: none;
+    position: absolute;
+    left: -660px;
+    top: 30px;
+    z-index: 1000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sizeGuide:hover img{
+    display: block;
 }
 
 /* 選取顏色 */
@@ -524,6 +543,8 @@ footer .footerContent{
     border-top: 1px solid black;
 }
 
+.clickBox{}
+
 .clickBox span{
     display: block;
     cursor: pointer;
@@ -532,16 +553,22 @@ footer .footerContent{
     font-weight: bolder;
     color: black;
     padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.DescBox{
-    padding-bottom: 18px;
-}
+.clickBox span i{}
+
+.DescBox{}
 
 .DescBox p{
     color: black;
     font-size: 13px;
     font-weight: normal;
+}
+
+.DescBox p:last-child{
+    margin-bottom: 20px;
 }
 
 .DescBox h3{
@@ -550,13 +577,19 @@ footer .footerContent{
 }
 
 .DescBox ul{
-    padding: 10px 0;
     padding-left: 40px;
-
 }
 
+.DescBox ul:last-child{
+    margin-bottom: 20px;
+}
 .DescBox ul li{
     font-size: 13px;
+}
+
+.DescBoxBBL{
+    width: 100%;
+    border-bottom: 1px solid #000;
 }
 
 /* ----------- 周邊配件 ----------- */
@@ -609,7 +642,6 @@ footer .footerContent{
 }
 
 .accessoriesCard:hover{
-    background-color: rgba(255, 255, 255, 0.295);
     transition: all .2s ease-out;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
