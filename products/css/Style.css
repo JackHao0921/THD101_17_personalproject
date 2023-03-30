@@ -335,14 +335,14 @@ a{
     font-size: 20px;
     padding: 20px 0;
 }
-.pageList::after{
+/* .pageList::after{
     content: '';
     position: absolute;
     left: 200px;
     bottom: 140px;
     width: 150px;
     border-bottom: 1px solid #979797;
-}
+} */
 
 .pageList .pageListLink{
     text-decoration: none;

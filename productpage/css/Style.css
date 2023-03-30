@@ -557,7 +557,9 @@ footer .footerContent{
     justify-content: space-between;
 }
 
-.clickBox span i{}
+.clickBox span i{
+    transition: all .2s ease-out;
+}
 
 .DescBox{}
 

@@ -321,6 +321,7 @@ footer .footerContent{
 /* 導覽列 */
 .headConent{
     margin: 0 auto;
+    padding-top: 20px;
     width: 75%;
 }
 
