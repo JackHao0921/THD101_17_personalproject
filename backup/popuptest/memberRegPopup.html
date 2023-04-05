@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./memberPopup/css/memberPopstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>會員彈跳視窗測試</title>
+</head>
+
+<body>
+
+    <button type="button" id="popupBtn" class="popupBtn">Show</button>
+    <!-- 彈跳視窗 -->
+    <div id="modal" class="modal"></div>
+    <dialog open id="popupId" class="popup">
+        <div class="popupwrapper">
+            <!-- 頁首 -->
+            <div class="popHeader">
+                <div class="closeWrapper">
+                    <button type="button" id="btnClose" class="btnClose">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 右邊圖 -->
+            <div class="popContent">
+                <div class="popMemImg">
+                    <div class="popMemBg">
+                        <img src="../popuptest/memberPopup/img/rightLogo.png" alt="">
+                        <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
+                    </div>
+                </div>   
+                <!-- 左邊表格 -->
+                <div class="memContent">
+                    <form action="" id="msgform" class="msgform">
+                        <div class="msgPersonInfo">
+                            <h1 class="infoTitle">會員註冊</h1>
+                            <p class="infoDesc">歡迎加入騎士俱樂部！</p>
+                            <h2 class="inputTitle">會員名稱</h2>
+                            <input type="text" id="nameinput" class="msginput" placeholder="請輸入您的稱呼">
+                            <p class="wrongInfo" style="visibility:hidden">無效的帳號</p>
+                            <h2 class="inputTitle">電子信箱</h2>
+                            <input type="email" id="emailinput" class="msginput" placeholder="請輸入您的信箱">
+                            <p class="wrongInfo" style="visibility:hidden">無效的帳號</p>
+                            <h2 class="inputTitle">密碼</h2>
+                            <input type="password" id="passwordinput" class="msginput " placeholder="請輸入您的密碼">
+                            <p class="wrongInfo" style="visibility:hidden">無效的密碼</p>
+                        </div>
+                        <div class="newsAndPolicy">
+                            <div class="newsWrapper">
+                                <input type="radio" id="newsInput">
+                                <label for="newsInput" >
+                                    我願意接收騎士俱樂部的最新消息和優惠資訊
+                                </label>
+                            </div>
+
+                            <div class="policyWrapper">
+                                <input type="radio" id="policyInput">
+                                <label for="policyInput" >
+                                    我同意
+                                    <a href="#" class="policy">網站服務條款</a>
+                                    及
+                                    <a href="#" class="policy">隱私權政策</a>
+                                </label>
+                            </div>      
+                        </div>
+                        <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
+                        <div class="submitWrapper">
+                            <input type="submit" class="sendBtn" value="開始購物吧！">
+                        </div>
+                        <div class="afterSendWrapper">
+                            <a href="#" class="logIn">返回登入</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog>
+    <script>
+        // ----------- 開關按鈕
+        var popupBtn = document.getElementById("popupBtn");
+        popupBtn.addEventListener("click", function(){
+            //打開背景
+            var modal = document.getElementById("modal");
+            modal.classList.add("-modal_style");
+            //打開視窗
+            var popupId = document.getElementById("popupId");
+            popupId.classList.add("-popup_style");
+
+        });
+        //點叉叉關閉視窗
+        var btnClose = document.getElementById("btnClose");
+        btnClose.addEventListener("click", function(){
+            popupId.classList.remove("-popup_style");
+            modal.classList.remove("-modal_style");
+        });
+        //點黑背景關閉視窗
+        var modal = document.getElementById("modal");
+        modal.addEventListener("click", function(){
+            popupId.classList.remove("-popup_style");
+            modal.classList.remove("-modal_style");
+        });
+        // ----------- 填空警告
+        const msgform = document.getElementById("msgform")
+        const wrongInfo = document.getElementById("wrongInfo")
+        msgform.addEventListener('submit', (event) => {
+            event.preventDefault(); // 阻止默認送出
+
+            const nameinput = document.getElementById('nameinput');
+            const emailinput = document.getElementById('emailinput');
+            const textinput = document.getElementById('textinput');
+
+            // 檢查輸入是否為空
+            if (nameinput.value.trim() === '' || 
+                emailinput.value.trim() === '' || 
+                textinput.value.trim() === '' ) {
+                wrongInfo.style.visibility = 'visible';
+            } else {
+                msgform.submit(); // 送出
+            }
+        });
+
+        // // 記住我>按鈕再點一下取消
+        // function toggleRadio() {
+        //     const radios = document.getElementsByName(event.target);
+        //     for (let i = 0; i < radios.length; i++) {
+        //         // 如果按钮被選取，則取消選取
+        //         if (radios[i] !== event.target) {
+        //             radios[i].checked = false;
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+</html>

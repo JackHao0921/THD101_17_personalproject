@@ -59,7 +59,10 @@ body{
 
 .actionMenu .actionMenuLi .language{
     display: flex;
-    
+}
+.actionMenuLi:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
 .language .languageSpan{
@@ -106,13 +109,12 @@ body{
 }
 
 .topLogo{
-    filter: drop-shadow(none);
-    transition: all 1s ease-in;
+    transition: all .1s ease-in;
 }
 
-.topLogo:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25));
-    transition: all .2s ease-out;
+.topLogo:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
 .actionMenuLi .upButt{
@@ -439,7 +441,7 @@ body{
     border: none;
     background-color: rgba(255, 255, 255, 0);
     margin: 20px auto;
-
+    color: #ffffff;
     padding-bottom: 20px;
 }
 
@@ -449,16 +451,17 @@ body{
     height: 50px;
     line-height: 50px;
     text-align: center;
+    background-color: rgb(70, 70, 70);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: none;
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 .accessoriesMore:hover > .accessoriesMoreLink{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0);
     color: white;
     transition: all .2s ease-out;
 }
@@ -577,13 +580,13 @@ body{
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: none;
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 .accessoriesMore:hover > .accessoriesMoreLink{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0);
     color: white;
     transition: all .2s ease-out;
 }
@@ -629,6 +632,11 @@ footer .footerContent{
     margin-bottom: 20px;
 }
 
+.footerLogo:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
+}
+
 .footerContent .socialMedia{
     display: block;
     padding-bottom: 20px;
@@ -637,6 +645,11 @@ footer .footerContent{
 
 .socialMedia .socialMediaIcon{
     margin: 0 10px;
+}
+
+.socialMedia a:hover > img{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
 .footerContent .copyRight{

@@ -29,45 +29,7 @@ body{
     z-index: 9990;
 }
 
-.Popup{
-    width: 60%;
-    padding: 0;
-    border: 0;
-    margin: 0 auto;
-    border-radius:15px;
-    opacity: 0;
-    transition: all .3s ease;
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
-    
-
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: -1;
-}
-
-.popupReg{
-    width: 60%;
-    padding: 0;
-    border: 0;
-    margin: 0 auto;
-    border-radius:15px;
-    opacity: 0;
-    transition: all .3s ease;
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
-    
-
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: -1;
-}
-
-.popupForget{
+.popup{
     width: 60%;
     padding: 0;
     border: 0;
@@ -96,7 +58,7 @@ body{
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-image: url('../popImg/popBg.jpg');
+    background-image: url('../img/popBg.jpg');
     border-radius:15px;
     box-sizing: border-box;
     overflow: hidden;
@@ -108,7 +70,7 @@ body{
     display: block;
     width: 100%;
     height: 5em;
-    background-image: url('../popImg/popHeadBg.jpg');
+    background-image: url('../img/popHeadBg.jpg');
 }
 .closeWrapper{
     display: flex;
@@ -120,7 +82,7 @@ body{
     display: block;
     width: 100%;
     height: 2em;
-    background-image: url('../popImg/popFootBg.jpg');
+    background-image: url('../img/popFootBg.jpg');
 }
 
 /* 頁首關閉按鈕 */
@@ -136,8 +98,8 @@ body{
     color: white;
 }
 
-.bi:hover{
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+.btnClose:hover{
+    opacity: .4;
 }
 
 /* ----------- 網頁內容 ----------- */
@@ -147,50 +109,41 @@ body{
     display: flex;
     
 }
-
-/* ----------- 左圖內容 ----------- */
-.popContent .popImg{
+/* ==================== 會員彈窗 ==================== */
+/* ----------- 右圖內容 ----------- */
+.popContent .popMemImg{
     width: 40%;
     display: block;
-    background-image: url('../popImg/popImg.png');
+    background-image: url('../img/rightImg.jpg');
+    background-position: center;
     background-size: cover;
-    vertical-align: bottom;
     position: relative;
     flex-grow: 1;
-    
+    order: 2;
 }
-.popContent .popSloganBg{
-    color: white;
-    width: 60%;
+.popContent .popMemBg{
+    width: 40%;
     margin: 0 auto;
-    /* background-color: white; */
+    text-align: center;
     position: absolute;
     bottom: 20px;
     left: 0;
     right: 0;
 
-    mix-blend-mode: hard-light;
-    border-radius: 20px;
-    /* box-shadow: 0px 0px 10px white; */
-    opacity: .4;
 }
-.popImg .popImgSlogan{
+.popMemBg img{
     text-align: center;
-    font-family: 'Mr Dafoe', cursive;
-    width: 100%;
-    font-size: 2em;
-    line-height: 90px;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7))
+    width: 80%;
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
 }
 
-/* ----------- 右邊內容 ----------- */
-.popContent .msgContent{
+/* ----------- 左邊內容 ----------- */
+.popContent .memContent{
     width: 40%;
     padding: 5px 50px;
     flex-grow: 1;
 }
-.msgContent .msgform{
-}
+.remContent .msgform{}
 
 .msgform .msgCloseButton{}
 
@@ -215,11 +168,11 @@ body{
 
 .msgPersonInfo .msginput{
     width: 100%;
-    height: 25px;
+    height: 35px;
     padding: 0 5px;
     margin: 0;
     border: 0;
-    
+    border-bottom: 1px solid #000;
 }
 
 .msginput:focus{
@@ -257,14 +210,48 @@ body{
     text-align: left;
     vertical-align: top;
     white-space: normal;
-  }
+}
 
+/* ----------- 記住我&忘記密碼 ----------- */
+.memContent .remberAndForget{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remberAndForget .remberMe{}
+
+.remberMe input[type="radio"] {
+    display: none;
+}
+
+.remberMe input[type="radio"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border: 2px solid #4e4e4e;
+    border-radius: 50%;
+}
+
+.remberMe input[type="radio"]:checked + label:before {
+    background-color: #000000;
+}
+
+.forgetP a{
+    color: black;
+}
+
+.forgetP:hover a{
+    opacity: .4;
+}
 /* ----------- 送出按鈕 ----------- */
 
 .msgform .submitWrapper{
     display: flex;
-    height: 30px;
+    height: 50px;
     padding: 10px;
+    
 }
 
 .msgform .sendBtn{
@@ -272,9 +259,9 @@ body{
     text-align: center;
     background-color: rgb(70, 70, 70);
     color: white;
-    width: 100px;
-    font-size: 15px;
-    line-height: 15px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
     border-radius: 50px;
     box-shadow: none;
     cursor: pointer;
@@ -284,4 +271,92 @@ body{
     background-color: black;
     border: 0;
     
+}
+
+/* 加入會員 */
+.joinWrapper{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.joinWrapper .join{
+    /* margin: 0 auto; */
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.join:hover{
+    opacity: .4;
+}
+
+/* ----------- 隱私權設定 ----------- */
+.newsAndPolicy input[type="radio"] {
+    display: none;
+}
+
+.newsAndPolicy input[type="radio"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border: 2px solid #4e4e4e;
+    border-radius: 50%;
+}
+
+.newsAndPolicy input[type="radio"]:checked + label:before {
+    background-color: #000000;
+}
+
+.policy{
+    color: black;
+}
+
+.policy:hover{
+    opacity: .4;
+}
+
+/* ----------- 送出下的按鈕 ----------- */
+.afterSendWrapper{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.afterSendWrapper a{
+    /* margin: 0 auto; */
+    text-align: center;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.afterSendWrapper a:hover{
+    opacity: .4;
+}
+/* 返回登入跟加入會員 */
+.logAndjoinBtnBox{
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logAndjoinBtnBox a{
+    /* margin: 0 auto; */
+    text-align: center;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.logAndjoinBtnBox a:hover{
+    opacity: .4;
 }
