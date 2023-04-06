@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <link rel="stylesheet" href="./css/style.css">
         <!-- 彈跳視窗連結 -->
         <link rel="stylesheet" href="../popup/css/popstyle.css">
@@ -114,6 +113,9 @@
                         </form>
                     </div>
                 </div>
+                <!-- 頁尾 -->
+                <div class="popFooter"></div>
+            </div>
         </dialog>
         <!-- ========= 註冊會員彈跳 ========= -->
         <dialog open id="popupRegId" class="popupReg">
@@ -175,6 +177,8 @@
                         </form>
                     </div>
                 </div>
+                <!-- 頁尾 -->
+                <div class="popFooter"></div>
             </div>
         </dialog>
         <!-- ========= 忘記密碼彈跳 ========= -->
@@ -223,7 +227,62 @@
                 <!-- 頁尾 -->
                 <div class="popFooter"></div>
             </div>
-        </dialog>        
+        </dialog>
+        <!-- ========= 右邊小購物車滑出 ========= -->
+        <dialog open id="popupSmCartId" class="popupCart">
+            <div class="cartPopupwrapper">
+                <!-- 頁首和關閉按鈕 -->
+                <div class="cartHeader">
+                    <div class="smCartTitleBox">
+                        <h1 class="smCartTitle">購物車</h1>
+                    </div>
+                    <button type="button" id="cartCloseBtn" class="cartCloseBtn">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+                <!-- 購物車列表 -->
+                <div class="smCartContent">
+                    <form action="" id="smCartform" class="smCartform">
+                        <div class="smCartProducts">
+                            <img src="../popup/popImg/cart1.png" alt="" class="smProdImg">
+                            <div class="smCartProDescWrapper">
+                                <div class="smCartProDesc">
+                                    <h2 class="smCartProTitle">Bell BULLITT-經典黑</h2>
+                                    <p class="smCartnumAndPri">1 x NT＄16,158</p>
+                                </div>
+                                <i class="bi bi-trash3"></i>
+                            </div>
+                        </div>
+                        <div class="smCartProducts">
+                            <img src="../popup/popImg/cart2.png" alt="" class="smProdImg">
+                            <div class="smCartProDescWrapper">
+                                <div class="smCartProDesc">
+                                    <h2 class="smCartProTitle">CHARITES 泡泡鏡 燻黑</h2>
+                                    <p class="smCartnumAndPri">1 x NT＄580</p>
+                                </div>
+                                <i class="bi bi-trash3"></i>
+                            </div>
+                        </div>
+                        <div class="smCartProducts">
+                            <img src="../popup/popImg/cart3.png" alt="" class="smProdImg">
+                            <div class="smCartProDescWrapper">
+                                <div class="smCartProDesc">
+                                    <h2 class="smCartProTitle">Chief RTO-II VISOR 黑</h2>
+                                    <p class="smCartnumAndPri">1 x NT＄980</p>
+                                </div>
+                                <i class="bi bi-trash3"></i>
+                            </div>
+                        </div>
+                        <button type="button" class="SendCart" onclick="window.location.href='../cart/cart.html'">
+                            點我結帳
+                        </button>
+                    </form>
+                </div>
+                <!-- 頁尾 -->
+                <div class="popFooter"></div>
+            </div>
+        </dialog> 
+
         <div class="wrapper"><!-- Wrapper start -->
             <!-- Header -->
             <header class="top">
@@ -270,7 +329,7 @@
                             </li>
                             <!-- 購物車 -->
                             <li class="actionMenuLi">
-                                <button type="button" id="popupBtn" class="upButt">
+                                <button type="button" name="cartBtn" class="upButt">
                                     <img src="img/iconCart.svg" alt="" class="cartImg">
                                 </button>
                             </li>
@@ -421,7 +480,8 @@
                             <div class="accImgWrapper">
                                 <img src="./img/products/accpro1.png" alt="" class="accImgs">
                             </div>
-                            <div class="accDesc">                                <h3 class="accTitle">CHARITES 泡泡鏡 燻黑</h3>
+                            <div class="accDesc">                                
+                                <h3 class="accTitle">CHARITES 泡泡鏡 燻黑</h3>
                                 <p class="accPrice">NT$ 580</p>
                             </div>
                         </a>

@@ -14,6 +14,7 @@
 <body>
     <button type="button" id="commBtn" class="popupBtn">意見回復</button>
     <button type="button" id="memberBtn" class="popupBtn">會員</button>
+    <button type="button" name="cartBtn" class="popupBtn">購物車</button>
     <!-- 聯繫我們彈跳 -->
     <div id="modal" class="modal"></div>
     <dialog open id="commPopupId" class="Popup">
@@ -112,6 +113,9 @@
                     </form>
                 </div>
             </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
     </dialog>
     <!-- ========= 註冊會員彈跳 ========= -->
     <dialog open id="popupRegId" class="popupReg">
@@ -173,6 +177,8 @@
                     </form>
                 </div>
             </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
         </div>
     </dialog>
     <!-- ========= 忘記密碼彈跳 ========= -->
@@ -222,8 +228,60 @@
             <div class="popFooter"></div>
         </div>
     </dialog>        
-    <!-- 頁尾 -->
-    <div class="popFooter"></div>
+    <!-- ========= 右邊小購物車滑出 ========= -->
+    <dialog open id="popupSmCartId" class="popupCart">
+        <div class="cartPopupwrapper">
+            <!-- 頁首和關閉按鈕 -->
+            <div class="cartHeader">
+                <div class="smCartTitleBox">
+                    <h1 class="smCartTitle">購物車</h1>
+                </div>
+                <button type="button" id="cartCloseBtn" class="cartCloseBtn">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </div>
+            <!-- 購物車列表 -->
+            <div class="smCartContent">
+                <form action="" id="smCartform" class="smCartform">
+                    <div class="smCartProducts">
+                        <img src="./popup/popImg/cart1.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">Bell BULLITT-經典黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄16,158</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <div class="smCartProducts">
+                        <img src="./popup/popImg/cart2.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">CHARITES 泡泡鏡 燻黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄580</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <div class="smCartProducts">
+                        <img src="./popup/popImg/cart3.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">Chief RTO-II VISOR 黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄980</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="SendCart" href="#">
+                        點我結帳
+                    </div>
+                </form>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog> 
     <script>
         // !====================== 所有彈窗 ======================!
         // ====================== 聯繫彈窗 ======================
@@ -375,6 +433,29 @@
             // 開啟加入會員彈窗
             popupRegId.classList.add("-popup_style");
 
+        });
+
+        // ====================== 右邊滑入小購物車視窗 ======================
+        // ----------- 開關按鈕
+        var cartBtn = document.getElementsByName("cartBtn")[0];
+        cartBtn.addEventListener("click", function(){
+            //打開視窗
+            var popupSmCartId = document.getElementById("popupSmCartId");
+            popupSmCartId.classList.add("-carPopup_style");
+            modal.classList.add("-cartModal_style");
+        });
+        //點叉叉關閉視窗
+        var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
+        cartCloseBtn.addEventListener("click", function(){
+            // console.log("a");
+            //打開背景
+            modal.classList.remove("-cartModal_style");
+            popupSmCartId.classList.remove("-carPopup_style");
+        });
+        // 點視窗外面關閉
+        modal.addEventListener("click", function(){
+            popupSmCartId.classList.remove("-carPopup_style");
+            modal.classList.remove("-cartModal_style");
         });
     </script>
 </body>

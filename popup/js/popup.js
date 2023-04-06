@@ -9,6 +9,8 @@ commBtn.addEventListener("click", function(){
     //打開視窗
     var commPopupId = document.getElementById("commPopupId");
     commPopupId.classList.add("-popup_style");
+    // 關閉購物車
+    popupSmCartId.classList.remove("-carPopup_style");
 
 });
 //點叉叉關閉視窗
@@ -43,16 +45,20 @@ msgform.addEventListener('submit', (e) => {
     }
 });
 // ====================== 登入會員彈窗 ======================
-// ----------- 開關按鈕
 var memberBtn = document.getElementsByName("memberBtn")[0];
+var popupId = document.getElementById("popupId");
+var popupRegId = document.getElementById("popupRegId");
+var popupForgetId = document.getElementById("popupForgetId");
+var modal = document.getElementById("modal");
+// ----------- 開關按鈕
 memberBtn.addEventListener("click", function(){
-    console.log('a');
+    // console.log('a');
     //打開背景
-    var modal = document.getElementById("modal");
     modal.classList.add("-modal_style");
     //打開視窗
-    var popupId = document.getElementById("popupId");
     popupId.classList.add("-popup_style");
+    // 關閉購物車
+    popupSmCartId.classList.remove("-carPopup_style");
 
 });
 //點叉叉關閉視窗
@@ -63,7 +69,6 @@ btnClose.addEventListener("click", function(){
     modal.classList.remove("-modal_style");
 });
 //點黑背景關閉視窗
-var modal = document.getElementById("modal");
 modal.addEventListener("click", function(){
     popupId.classList.remove("-popup_style");
     modal.classList.remove("-modal_style");
@@ -74,7 +79,6 @@ regBtn.addEventListener("click", function(){
     // 關閉登入視窗
     popupId.classList.remove("-popup_style");
     //打開註冊視窗
-    var popupRegId = document.getElementById("popupRegId");
     popupRegId.classList.add("-popup_style");
 
 });
@@ -86,7 +90,6 @@ btnClose.addEventListener("click", function(){
     modal.classList.remove("-modal_style");
 });
 //點黑背景關閉視窗
-var modal = document.getElementById("modal");
 modal.addEventListener("click", function(){
     popupRegId.classList.remove("-popup_style");
     modal.classList.remove("-modal_style");
@@ -119,7 +122,6 @@ btnClose.addEventListener("click", function(){
     modal.classList.remove("-modal_style");
 });
 //點黑背景關閉視窗
-var modal = document.getElementById("modal");
 modal.addEventListener("click", function(){
     popupId.classList.remove("-popup_style");
     popupRegId.classList.remove("-popup_style");
@@ -140,12 +142,32 @@ var regBtn = document.getElementsByClassName("regBtn")[1];
 regBtn.addEventListener("click", function(){
     // 關閉登入視窗
     popupId.classList.remove("-popup_style");
-    //打開註冊視窗
-    var popupRegId = document.getElementById("popupRegId");
     // 關閉其他會員彈窗
     popupId.classList.remove("-popup_style");
     popupForgetId.classList.remove("-popup_style");
     // 開啟加入會員彈窗
     popupRegId.classList.add("-popup_style");
 
+});
+// ====================== 右邊滑入小購物車視窗 ======================
+var popupSmCartId = document.getElementById("popupSmCartId");
+// ----------- 開關按鈕
+var cartBtn = document.getElementsByName("cartBtn")[0];
+cartBtn.addEventListener("click", function(){
+    //打開視窗
+    popupSmCartId.classList.add("-carPopup_style");
+    modal.classList.add("-cartModal_style");
+});
+//點叉叉關閉視窗
+var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
+cartCloseBtn.addEventListener("click", function(){
+    // console.log("a");
+    //打開背景
+    modal.classList.remove("-cartModal_style");
+    popupSmCartId.classList.remove("-carPopup_style");
+});
+// 點視窗外面關閉
+modal.addEventListener("click", function(){
+    popupSmCartId.classList.remove("-carPopup_style");
+    modal.classList.remove("-cartModal_style");
 });

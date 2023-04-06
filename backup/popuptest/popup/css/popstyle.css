@@ -14,6 +14,7 @@ body{
 .modal{
     /* display: none; */
     opacity: 0;
+    pointer-events: none;
     transition: all 1s ease;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
@@ -25,6 +26,7 @@ body{
 }
 
 .-modal_style{
+    pointer-events: auto;
     opacity: 1;
     z-index: 9990;
 }
@@ -36,6 +38,7 @@ body{
     margin: 0 auto;
     border-radius:15px;
     opacity: 0;
+    pointer-events: none;
     transition: all .3s ease;
     box-sizing: border-box;
     overflow: hidden;
@@ -49,6 +52,7 @@ body{
 }
 
 .popupReg, .popupForget{
+    pointer-events: none;
     width: 60%;
     padding: 0;
     border: 0;
@@ -68,6 +72,7 @@ body{
 }
 
 .-popup_style{
+    pointer-events: auto;
     opacity: 1;
     top:2em;
     z-index: 9999;
@@ -118,7 +123,7 @@ body{
 }
 
 .bi:hover{
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+    opacity: .4;
 }
 
 /* ----------- 網頁內容 ----------- */
@@ -265,4 +270,142 @@ body{
     background-color: black;
     border: 0;
     
+}
+
+/* ==================== 右邊小購物車 ==================== */
+.popupCart{
+    border: none;
+    opacity: 1;
+    pointer-events: none;
+
+    position: fixed;
+    top:200px;
+    right: -500px;
+    left: auto;
+    z-index: 9900;
+
+    transition: all .3s ease;
+}
+
+.-cartModal_style{
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9000;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.-carPopup_style{
+    pointer-events: auto;
+    opacity: 1;
+    top:200px;
+    right: 5%;
+}
+
+
+
+.cartPopupwrapper{
+    width: 300px;
+    background-image: url('../popImg/popBg.jpg');
+    border-radius:15px 0px 0px 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+}
+/* ----------- 購物車標題與關閉按鈕 ----------- */
+.cartPopupwrapper .cartHeader{
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+}
+
+.cartHeader .smCartTitleBox{}
+
+.smCartTitleBox .smCartTitle{
+    margin-left: 20px;
+    font-size: 30px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.cartHeader .cartCloseBtn{
+    border: 0;
+    background: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.cartHeader .cartCloseBtn i{
+    font-size: 20px;
+    line-height: 20px;
+    color: rgb(70, 70, 70);
+}
+
+.cartHeader .cartCloseBtn i:hover{
+    opacity: .4;
+}
+/* ----------- 購物車內容 ----------- */
+.cartPopupwrapper .smCartContent{}
+
+.smCartContent .smCartform{}
+
+.smCartContent .smCartProducts{
+    display: flex;
+    border-bottom: 1px solid #000;
+    
+}
+
+.smCartProducts img{
+    margin: 10px;
+    display: block;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: all .3s ease;
+}
+
+.smCartProducts img:hover{
+    border: 2px solid black;
+}
+
+.smCartProDescWrapper{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.smCartProDesc{
+    margin: 10px 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.smCartProTitle{}
+
+.smCartProducts i{
+    cursor: pointer;
+    text-align-last: left;
+    margin-right: 10px;
+    margin-top: 45px;
+}
+
+/* ----------- 點我結帳 ----------- */
+.smCartform .SendCart{
+    width: 100%;
+    background: rgb(70, 70, 70);
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+}
+
+.smCartform .SendCart:hover{
+    background: rgb(0, 0, 0);
 }

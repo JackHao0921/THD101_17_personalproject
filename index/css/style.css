@@ -65,11 +65,15 @@ body{
     transition: all .1s ease-out;
 }
 
+.language:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
+}
+
 .language .languageSpan{
     font-size: 14px;
     display: block;
     margin-left: 5px;
-
 }
 
 .actionMenu .searchForm{

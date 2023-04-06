@@ -9,7 +9,7 @@ body{
 
 .wrapper{}
 
-/* ----------- Header ----------- */
+/* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */
 .top{
     background-image: url(../img/topBg.jpg);
@@ -24,13 +24,14 @@ body{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+
+
 }
 
 .allTopMenu .topMenu{
     width: 100%;
     display: flex;
     padding: 20px 0;
-
     justify-content: space-between;
 }
 
@@ -58,7 +59,14 @@ body{
 
 .actionMenu .actionMenuLi .language{
     display: flex;
-    
+}
+.language:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
+}
+.actionMenuLi button:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
 .language .languageSpan{
@@ -82,7 +90,6 @@ body{
     background-color: rgba(0, 0, 0, 0);
     width: 0;
     color: white;
-
     transition: all 1s ease-in;
 }
 
@@ -105,18 +112,29 @@ body{
     transition: all 1s ease-out;
 }
 
-.topLogo{
-    filter: drop-shadow(none);
-    transition: all 1s ease-in;
+.searchForm:hover > a{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
-.topLogo:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25));
-    transition: all .2s ease-out;
+.topLogo{
+    transition: all .1s ease-in;
+}
+
+.topLogo:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
+}
+
+.actionMenuLi .upButt{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 /* ----------- 下面MENU ----------- */
-
 .allTopMenu .mainMenu{
     width: 100%;
     padding-top: 5px;
@@ -186,7 +204,6 @@ body{
     text-decoration: none;
     color: white;
 }
-
 /* ----------- 頁尾 ----------- */
 .beforeFooter{
     width: 100%;
@@ -214,8 +231,8 @@ footer{
     background-size: contain;
     box-sizing: border-box;
     box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.4);
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: 20px 0 !important;
+    margin-top: 20px !important;
 }
 
 footer .footerContent{
@@ -228,6 +245,11 @@ footer .footerContent{
     margin-bottom: 20px;
 }
 
+.footerLogo:hover{
+    opacity: .7;
+    transition: all .1s ease-out;
+}
+
 .footerContent .socialMedia{
     display: block;
     padding-bottom: 20px;
@@ -236,6 +258,11 @@ footer .footerContent{
 
 .socialMedia .socialMediaIcon{
     margin: 0 10px;
+}
+
+.socialMedia a:hover > img{
+    opacity: .7;
+    transition: all .1s ease-out;
 }
 
 .footerContent .copyRight{
