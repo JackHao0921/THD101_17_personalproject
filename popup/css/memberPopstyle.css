@@ -114,7 +114,7 @@ body{
 .popContent .popMemImg{
     width: 40%;
     display: block;
-    background-image: url('../popimg/rightImg.jpg');
+    background-image: url('../popImg/rightImg.jpg');
     background-position: center;
     background-size: cover;
     position: relative;
