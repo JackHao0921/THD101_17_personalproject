@@ -44,9 +44,9 @@ msgform.addEventListener('submit', (e) => {
 });
 // ====================== 登入會員彈窗 ======================
 // ----------- 開關按鈕
-var memberBtn = document.getElementById("memberBtn");
+var memberBtn = document.getElementsByName("memberBtn")[0];
 memberBtn.addEventListener("click", function(){
-    console.log('memberBtn:', document.getElementById("memberBtn"));
+    console.log('a');
     //打開背景
     var modal = document.getElementById("modal");
     modal.classList.add("-modal_style");
