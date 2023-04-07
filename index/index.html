@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/rwd.css">
         <!-- 彈跳視窗連結 -->
         <link rel="stylesheet" href="../popup/css/popstyle.css">
         <link rel="stylesheet" href="../popup/css/memberPopstyle.css">
@@ -16,7 +17,7 @@
     <body>
         <!-- 載入中畫面 -->
         <div id="loading_block">
-            載入中...
+            <img src="./img/topLogo.svg" alt="" class="loadingImg">
           </div>
         <!-- 彈跳視窗 -->
         <div id="modal" class="modal"></div>
@@ -532,10 +533,14 @@
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
             // 載入中畫面
-            window.addEventListener("load", function() {
+            window.addEventListener('load', function() {
                 setTimeout(function() {
-                    document.getElementById("loading_block").remove();
-                }, 1000);
+                    var loadingBlock = document.getElementById('loading_block');
+                    loadingBlock.classList.add('hide');
+                    setTimeout(function() {
+                    loadingBlock.remove();
+                    }, 1000);
+                },1000);
             });
 
             // ---------------------- 圖片換頁功能 ----

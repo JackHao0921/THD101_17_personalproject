@@ -22,8 +22,36 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../img/loadingBg.jpg);
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+.hide {
+    animation: slide-up .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-up {
+from {
+    transform: translateY(0);
+    opacity: 1;
+}
+to {
+    transform: translateY(-100%);
+    opacity: .7;
+}
+}
+
+.loadingImg {
+    width: auto;
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
+    animation: fadein 1s ease-in-out;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 /* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */
@@ -225,7 +253,7 @@ body{
 .wrapper .topBanner{
     background: linear-gradient(90deg, #555, #838383, #555);
     /* background-color: #555555; */
-    height: calc(45vw - 300px);
+    height: calc(45% - 300px);
     width: 100%;
     align-items: center;
     display: flex;
