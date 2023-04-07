@@ -9,6 +9,22 @@ body{
 
 .wrapper{}
 
+/* 載入中畫面 */
+#loading_block{
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
 /* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */
 .top{
@@ -259,7 +275,6 @@ body{
 
 .topTitle{
     color: white;
-    width: calc(25vw- 220px);
     height: 100%;
     box-sizing: border-box;
     display: block;
@@ -267,6 +282,7 @@ body{
     padding: 20px;
     margin:0;
     overflow: hidden;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
 
     position: relative;
 }
@@ -282,6 +298,7 @@ body{
     display: block;
     font-size: 3em;
     font-style: bold;
+    flex-grow: 1;
 }
 .topTitle h3{
     display: block;
@@ -317,7 +334,8 @@ body{
     background-image: url("../img/topbuble.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 70em;
+    background-position:center;
+    width: 100%;
     height: 15em;
     margin: 0 auto;
 
@@ -359,7 +377,7 @@ body{
 }
 
 .helmetTitle .titleLines{
-    width: 400px;
+    width: 30%;
     height: 100%;
     margin: auto 0;
 }
@@ -376,15 +394,14 @@ body{
     padding: 10px 0;
 
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .helmetProducts .helmetCard{
-    background-color: none;
+    background-color:  rgba(255, 255, 255, 0.3);
     transition: all .2s ease-in;
-    border-radius: 5px;
-    margin: 0 20px;
+    
     width: 100%;
+    flex-grow: 1;
 }
 
 .helmetCard .helmetLink{
@@ -396,7 +413,7 @@ body{
 }
 
 .helmetCard:hover{
-    background-color: rgba(255, 255, 255, 0.295);
+    border-radius: 5px;
     transition: all .2s ease-out;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 }
@@ -490,7 +507,7 @@ body{
 }
 
 .accessoriesTitle .titleLines{
-    width: 400px;
+    width: 30%;
     height: 100%;
     margin: auto 0;
 }
@@ -506,15 +523,13 @@ body{
     justify-content:space-between ;
     padding: 10px 0;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .accessoriesProducts .accessoriesCard{
-    background-color: none;
+    background-color: rgba(255, 255, 255, 0.3);
     transition: all .2s ease-in;
-    border-radius: 5px;
-    margin: 0 20px;
+    flex-grow: 1;
 }
 
 .accessoriesCard .accessoriesLink{
@@ -526,7 +541,7 @@ body{
 }
 
 .accessoriesCard:hover{
-    background-color: rgba(255, 255, 255, 0.295);
+    border-radius: 5px;
     transition: all .2s ease-out;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }

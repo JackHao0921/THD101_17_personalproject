@@ -14,6 +14,10 @@
         <title>Knights Club 騎士俱樂部 | 首頁</title>
     </head>
     <body>
+        <!-- 載入中畫面 -->
+        <div id="loading_block">
+            載入中...
+          </div>
         <!-- 彈跳視窗 -->
         <div id="modal" class="modal"></div>
         <!-- 聯繫我們彈跳 -->
@@ -525,9 +529,16 @@
                 </button>
             </div>
         </div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script>
+            // 載入中畫面
+            window.addEventListener("load", function() {
+                setTimeout(function() {
+                    document.getElementById("loading_block").remove();
+                }, 1000);
+            });
 
-        <script>        
-            // ---------------------- swiper
+            // ---------------------- 圖片換頁功能 ----
             var mySwiper = new Swiper ('.swiper', {
                 direction: 'horizontal', // 垂直水平切換
                 loop: true, // 循環
@@ -550,7 +561,7 @@
                 //   scrollbar: {
                 //     el: '.swiper-scrollbar',
                 //   },
-            })        
+            });
         </script>
         <script src="../popup/js/popup.js"> </script>
     </body>
