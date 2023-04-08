@@ -18,11 +18,12 @@ body{
     width: 100%;
     height: 100%;
     background-color: #000000;
-    z-index: 9999;
+    z-index: 100000;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(../img/loadingBg.jpg);
+    background-size: cover;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
 }
 .hide {
@@ -36,7 +37,7 @@ from {
     opacity: 1;
 }
 to {
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     opacity: .7;
 }
 }
@@ -52,6 +53,143 @@ to {
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* 導覽列的初始樣式 */
+.navbar-rwd {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px; /* 導覽列往左移出畫面 */
+    width: 250px;
+    height: 100%;
+    transition: right 0.3s ease-in-out;
+    z-index: 8000;
+    background-image: url(../img/navbar-rwd.jpg);
+  }
+  
+  /* 導覽列內的連結樣式 */
+  .navbar-rwd ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-rwd li {
+      margin: 0;
+      padding: 0;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-rwd li.active {
+    font-size: 2rem;
+    /* line-height: 4rem; */
+  }
+  
+  .navbar-rwd a{
+    display: block;
+    padding: 20px 0;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px dashed #ddd;
+    filter:drop-shadow( -5px 0px 5px rgba(0, 0, 0, 0.4));
+  }
+  
+  .navbar-rwd i{
+      margin-right: 10px;
+      color: #ffffff;
+  }
+  
+  .upButt{
+      padding: 20px 0;
+      margin: 0 20px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      /* filter:drop-shadow( -5px 0px 5px rgba(0, 0, 0, 0.4)); */
+  }
+  
+  .upButt i{
+      margin-right: 10px;
+      color: #ffffff;
+  }
+  
+  .navbar-rwd li:hover {
+    background-color: #000000;
+  }
+  
+  /* 漢堡列按鈕的樣式 */
+  .menu-btn-rwd {
+    display: none;
+      background: white;
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+      z-index: 8500;
+  }
+  
+  .bar-rwd {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* 漢堡列按鈕的動畫效果 */
+  .menu-btn-rwd.open .bar-rwd:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .menu-btn-rwd.open .bar-rwd:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-btn-rwd.open .bar-rwd:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* 導覽列展開後的樣式 */
+  .navbar-rwd.open {
+    right: 0; /* 導覽列滑入畫面 */
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchForm{
+      display: flex;
+      justify-content: space-between;
+  }  
+
+
+/* 414w 導覽&LOGO */
+.rwdLogo{
+    border: 0;
+    background: #ffffff00;
+    position: fixed;
+    top: 1m0px;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    z-index: 8000; 
+}
+
+.rwdLogo img{
+    width: 100%;
+    filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.4));
 }
 /* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */
@@ -170,7 +308,7 @@ to {
     transition: all .1s ease-out;
 }
 
-.actionMenuLi .upButt{
+.upButt{
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     cursor: pointer;
@@ -274,10 +412,17 @@ to {
     z-index: 0 !important;
 }
 
+.swiper-slide.rwd{
+    display: none;
+}
 
 .swiper .swiper-slide img{
     background-size: contain !important;
     background-position: center !important;
+}
+
+.slideImg-rwd{
+    display: none;
 }
 
 .swiper-pagination{
@@ -309,7 +454,6 @@ to {
     line-height: 1.6;
     padding: 20px;
     margin:0;
-    overflow: hidden;
     filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
 
     position: relative;
@@ -340,15 +484,13 @@ to {
     margin-bottom: 20px;
 }
 .keysWrapper{
-    display: grid;
+    position: absolute;
+    top: 20em;
+    right: -10em;
 }
 
 .topKeys{
-    height: 30vh;
-    justify-self: flex-end;
-
-    transform: translateY(-7vh);
-    /* transform: translateX(-1.5vw); */
+    width: 50%;
 }
 
 /* ----------- 頁首標題和影片 ----------- */
@@ -367,7 +509,7 @@ to {
     height: 15em;
     margin: 0 auto;
 
-    transform: translateY(-1.5vw);
+    transform: translateY(-1.5%);
     z-index: 1001;
 }
 

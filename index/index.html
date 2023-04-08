@@ -18,7 +18,76 @@
         <!-- 載入中畫面 -->
         <div id="loading_block">
             <img src="./img/topLogo.svg" alt="" class="loadingImg">
-          </div>
+        </div>
+        <!-- 手機板LOGO -->
+        <a href="../index/index.html">
+            <button  class="rwdLogo">
+                <img src="./img/rwdTopLogo.svg" alt="">
+            </button>
+        </a>
+        <!-- 漢堡列按鈕 -->
+        <button class="menu-btn-rwd">
+            <span class="bar-rwd"></span>
+            <span class="bar-rwd"></span>
+            <span class="bar-rwd"></span>
+        </button>
+        <!-- 導覽列 -->
+        <nav class="navbar-rwd">
+            <ul>
+            <li>
+                <a href="../about/about.html">
+                    <i class="bi bi-info-circle"></i>
+                    關於我們
+                </a>
+            </li>
+            <li>
+                <a href="../products/products.html">
+                    <i class="bi bi-card-list"></i>
+                    商品列表
+                </a>
+            </li>
+            <li>
+                <a href="../news/news.html">
+                    <i class="bi bi-bell"></i>
+                    最新消息
+                </a>
+            </li>
+            <li>
+                <a href="../Store/store.html">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    經銷據點
+                </a>
+            </li>
+            <li>
+                <a href="../recommend/recommend.html">
+                    <i class="bi bi-search-heart"></i>
+                    幫你推薦
+                </a>
+            </li>
+                <!-- 會員 -->
+                <li>
+                    <a type="button" id="memberBtn" name="memberBtn" class="upButt">
+                        <i class="bi bi-person-fill"></i>
+                        會員登入
+                    </a>
+                </li>
+                <!-- 聯繫我們 -->
+                <li>
+                    <a type="button" id="commBtn" class="upButt">
+                        <i class="bi bi-chat-dots"></i>
+                        聯繫我們
+                    </a>
+                </li>
+                <!-- 購物車 -->
+                <li>
+                    <a type="button" name="cartBtn" class="upButt">
+                        <i class="bi bi-basket2-fill"></i>
+                        購物車
+                    </a>
+                </li>
+            </div>
+            </ul>
+        </nav>
         <!-- 彈跳視窗 -->
         <div id="modal" class="modal"></div>
         <!-- 聯繫我們彈跳 -->
@@ -376,13 +445,16 @@
                     <div class="swiper-wrapper">
                         <!-- 內圖 -->
                         <div class="swiper-slide">
-                            <img src="img/swiper1.jpg" alt="">
+                            <img src="img/swiper1.jpg" class="slideImg" alt="">
+                            <img src="img/swiper1-rwd.jpg" class="slideImg-rwd" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/swiper2.jpg" alt="">
+                            <img src="img/swiper2.jpg" class="slideImg" alt="">
+                            <img src="img/swiper2-rwd.jpg" class="slideImg-rwd" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/swiper3.jpg" alt="">
+                            <img src="img/swiper3.jpg" class="slideImg" alt="">
+                            <img src="img/swiper3-rwd.jpg" class="slideImg-rwd" alt="">
                         </div>
                         </div>
                         <!-- 分頁點點 -->
@@ -568,7 +640,9 @@
                 //   },
             });
         </script>
+
         <script src="../popup/js/popup.js"> </script>
+        <script src="./js/ham.js"></script>
     </body>
     <div class="beforeFooter">
         <img src="./img/beforeFooterImg.png" alt="" class="beforeFooterItiems">
@@ -580,10 +654,10 @@
                 <img src="img/footerlogo.png" alt="" class="footerLogo">
             </a>
             <div class="socialMedia">
-                <a href="#" class="footerFbLink">
+                <a href="https://zh-tw.facebook.com/" class="footerFbLink">
                     <img src="img/footerfb.png" alt="" class="socialMediaIcon">
                 </a>
-                <a href="#" class="footerIgLink">
+                <a href="https://www.instagram.com/" class="footerIgLink">
                     <img src="img/footerig.png" alt="" class="socialMediaIcon">
                 </a>
             </div>

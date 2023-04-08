@@ -157,12 +157,13 @@ cartBtn.addEventListener("click", function(){
     //打開視窗
     popupSmCartId.classList.add("-carPopup_style");
     modal.classList.add("-cartModal_style");
+    popupId.classList.remove("-popup_style");
+    popupForgetId.classList.remove("-popup_style");
 });
 //點叉叉關閉視窗
 var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
 cartCloseBtn.addEventListener("click", function(){
     // console.log("a");
-    //打開背景
     modal.classList.remove("-cartModal_style");
     popupSmCartId.classList.remove("-carPopup_style");
 });

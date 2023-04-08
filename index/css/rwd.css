@@ -1,8 +1,19 @@
 @media screen and (max-width: 414px){
+    /* 載入畫面 */
     .loadingImg {
         width: 30%;
     }
 
+    /* 414w 導覽列 */
+    .menu-btn-rwd{
+        display: block;
+    }
+
+    .navbar-rwd{
+        display: block;
+    }
+
+    /* 首頁橫幅 */
     .top{
         display: none;
     }
@@ -15,6 +26,16 @@
         display: none;
     }
 
+    /* 彈跳視窗 */
+    .popMemImg,.popImg{
+        display: none !important;
+    }
+
+    #commPopupId,.popupReg,.popupForget,.popup{
+        width: 80% !important;
+    }
+
+    /* 頁首輪播 */
     .swiper{
         flex-grow: 1;
         height: 30em;
@@ -23,4 +44,87 @@
     .swiper-slide{
         width: 100%;
     }
+
+    .swiper-slide img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slideImg{
+        display: none;
+    }
+
+    .slideImg-rwd{
+        display: block;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next{
+        display: none;
+    }
+    /* 頁首影片 */
+    .topVideoWrapper{
+        width: 80%;
+    }
+
+    .topVideoWrapper .topVideoBuble{
+        height: 5em;
+        transform: translateY(-10%);
+    }
+
+    .topVideoBuble .topVideoWords{
+        font-size: 25px;
+    }
+
+    .topVideo{
+        width: 100%;
+        height: 15em;
+    }
+    /* 商品 */
+    .titleLines{
+        display: none !important;
+    }
+
+    .helmetContent, .accessoriesContent{
+        margin-bottom: 100px !important;
+    }
+
+    .helmetTitle, .accessoriesTitle{
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .accessoriesTitleContent, .helmetTitleContent{
+        flex-grow: 1;
+        text-align: center;
+
+    }
+
+    .helmetContent .helmetProducts{
+        flex-direction: column;
+    }
+
+    .accessoriesContent .accessoriesProducts{
+        flex-direction: column;
+    }
+    /* 頁尾 */
+    footer{
+        background-image: url(../img/footerBg-RWD.jpg) ;
+    }
+    .copyRight p{
+        font-size: 10px;
+        margin-bottom: 40px;
+    }
+
+
+    /* 彈跳視窗 */
+    .popContent .popMemImg{
+        display: none;
+    }
+
+    .popContent .infoTitle{
+        font-size: 20px;
+    }
+
+
 }

@@ -4,161 +4,356 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ham_style.css">
+    <link rel="stylesheet" href="../index/css/Style.css">
+    <link rel="stylesheet" href="../popup/css/popstyle.css">
+    <link rel="stylesheet" href="../popup/css/memberPopstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
-<style>
-/* 導覽列的初始樣式 */
-.navbar {
-  position: fixed;
-  top: 0;
-  right: -250px; /* 導覽列往左移出畫面 */
-  width: 250px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease-in-out;
-  z-index: 8000;
-}
 
-/* 導覽列內的連結樣式 */
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  font-size: 1.6rem;
-  line-height: 3rem;
-  transition: all 0.3s ease;
-}
-
-.navbar li.active {
-  font-size: 2rem;
-  line-height: 4rem;
-}
-
-
-
-.navbar a {
-  display: block;
-  padding: 20px;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-.navbar a:hover {
-  background-color: #f2f2f2;
-}
-
-/* 漢堡列按鈕的樣式 */
-.menu-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.bar {
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: #333;
-  margin: 6px auto;
-  transition: all 0.3s ease-in-out;
-}
-
-/* 漢堡列按鈕的動畫效果 */
-.menu-btn.open .bar:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.menu-btn.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-btn.open .bar:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* 導覽列展開後的樣式 */
-.navbar.open {
-  right: 0; /* 導覽列滑入畫面 */
-}
-
-
-</style>
 
 </head>
 <body>
+    <!-- 手機板LOGO -->
+    <button class="rwdLogo">
+        <img src="./img/topLogo.svg" alt="">
+    </button>
+    <!-- 漢堡列按鈕 -->
+    <button class="menu-btn-rwd">
+        <span class="bar-rwd"></span>
+        <span class="bar-rwd"></span>
+        <span class="bar-rwd"></span>
+    </button>
+    
+    <!-- 導覽列 -->
+    <nav class="navbar-rwd">
+        <ul>
+        <li>
+            <a href="../about/about.html">
+                <i class="bi bi-info-circle"></i>
+                關於我們
+            </a>
+        </li>
+        <li>
+            <a href="../products/products.html">
+                <i class="bi bi-card-list"></i>
+                商品列表
+            </a>
+        </li>
+        <li>
+            <a href="../news/news.html">
+                <i class="bi bi-bell"></i>
+                最新消息
+            </a>
+        </li>
+        <li>
+            <a href="../Store/store.html">
+                <i class="bi bi-geo-alt-fill"></i>
+                經銷據點
+            </a>
+        </li>
+        <li>
+            <a href="../recommend/recommend.html">
+                <i class="bi bi-search-heart"></i>
+                幫你推薦
+            </a>
+        </li>
+            <!-- 會員 -->
+            <li>
+                <a type="button" id="memberBtn" name="memberBtn" class="upButt">
+                    <i class="bi bi-person-fill"></i>
+                    會員登入
+                </a>
+            </li>
+            <!-- 聯繫我們 -->
+            <li>
+                <a type="button" id="commBtn" class="upButt">
+                    <i class="bi bi-chat-dots"></i>
+                    聯繫我們
+                </a>
+            </li>
+            <!-- 購物車 -->
+            <li>
+                <a type="button" name="cartBtn" class="upButt">
+                    <i class="bi bi-basket2-fill"></i>
+                    購物車
+                </a>
+            </li>
+        </div>
+        </ul>
+    </nav>
+    <!-- 彈跳視窗 -->
+    <div id="modal" class="modal"></div>
+    <!-- 聯繫我們彈跳 -->
+    <dialog open id="commPopupId" class="Popup">
+        <div class="popupwrapper">
+            <!-- 頁首 -->
+            <div class="popHeader">
+                <div class="closeWrapper">
+                    <button type="button" id="btnClose" class="btnClose">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 左邊圖 -->
+            <div class="popContent">
+                <div class="popImg">
+                    <div class="popSloganBg">
+                        <h2 class="popImgSlogan">Soul Searching...</h2>
+                    </div>
+                </div>   
+                <!-- 右邊表格 -->
+                <div class="msgContent">
+                    <form action="" id="msgform" class="msgform">
+                        <div class="msgPersonInfo">
+                            <h1 class="infoTitle">與我們聯繫</h1>
+                            <p class="infoDesc">歡迎留下您寶貴的意見！</p>
+                            <h2 class="inputTitle">稱謂</h2>
+                            <input type="name" id="nameinput" class="msginput" placeholder="請輸入您的稱呼">
+                            <p class="wrongInfo" style="visibility:hidden">您的稱謂不得為空</p>
+                            <h2 class="inputTitle">電子信箱</h2>
+                            <input type="email" id="emailinput" class="msginput " placeholder="請輸入您的電子信箱">
+                            <p class="wrongInfo" style="visibility:hidden">無效的電子郵件</p>
+                        </div>
+                        <div class="msgComment">
+                            <h2 class="inputTitle">請留下您寶貴的意見</h2>
+                            <textarea type="text" id="textinput" class="textMsg" placeholder="如果您有想購買的海外商品，或是對商品售後有疑問，歡迎在此留下您寶貴的意見" height="8em" maxlength="10"></textarea>
+                            <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
+                        </div>
+                        <div class="submitWrapper">
+                            <input type="submit" class="sendBtn" value="送出">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog>
+    <!-- ========= 登入會員彈跳 ========= -->
+    <dialog open id="popupId" class="popup">
+        <div class="popupwrapper">
+            <!-- 頁首 -->
+            <div class="popHeader">
+                <div class="closeWrapper">
+                    <button type="button" id="btnClose" class="btnClose">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 右邊圖 -->
+            <div class="popContent">
+                <div class="popMemImg">
+                    <div class="popMemBg">
+                        <img src="../popup/popImg/rightLogo.png" alt="">
+                        <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
+                    </div>
+                </div>   
+                <!-- 左邊表格 -->
+                <div class="memContent">
+                    <form action="" id="msgform" class="msgform">
+                        <div class="msgPersonInfo">
+                            <h1 class="infoTitle">會員登入</h1>
+                            <p class="infoDesc">騎士！歡迎回來</p>
+                            <h2 class="inputTitle">帳號/電子信箱</h2>
+                            <input type="text" id="nameinput" class="msginput" placeholder="請輸入您的帳號/電子信箱">
+                            <p class="wrongInfo" style="visibility:hidden">無效的帳號</p>
+                            <h2 class="inputTitle">密碼</h2>
+                            <input type="password" id="emailinput" class="msginput " placeholder="請輸入您的密碼">
+                            <p class="wrongInfo" style="visibility:hidden">無效的密碼</p>
+                        </div>
+                        <div class="remberAndForget">
+                            <div class="remberMe">
+                                <input type="radio" id="remberMeInput" onclick="toggleRadio(event)"><label for="remberMeInput" >記住我</label>
+                            </div>
+                            <div class="forgetP">
+                                <a href="#" id="forgetPBtn">忘記密碼</a>
+                            </div>
+                        </div>
 
- <!-- 漢堡列按鈕 -->
-<button class="menu-btn">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  
-  <!-- 導覽列 -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">首頁</a></li>
-      <li><a href="#">關於我們</a></li>
-      <li><a href="#">產品</a></li>
-      <li><a href="#">聯絡我們</a></li>
-    </ul>
-  </nav>
-  
+                        <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
+                        <div class="submitWrapper">
+                            <input type="submit" class="sendBtn" value="開始購物吧！">
+                        </div>
+                        <div class="afterSendWrapper">
+                            <a href="#" id="regBtn" class="regBtn">加入會員</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog>
+    <!-- ========= 註冊會員彈跳 ========= -->
+    <dialog open id="popupRegId" class="popupReg">
+        <div class="popupwrapper">
+            <!-- 頁首 -->
+            <div class="popHeader">
+                <div class="closeWrapper">
+                    <button type="button" id="btnClose" class="btnClose">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 右邊圖 -->
+            <div class="popContent">
+                <div class="popMemImg">
+                    <div class="popMemBg">
+                        <img src="../popup/popImg/rightLogo.png" alt="">
+                        <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
+                    </div>
+                </div>   
+                <!-- 左邊表格 -->
+                <div class="memContent">
+                    <form action="" id="msgform" class="msgform">
+                        <div class="msgPersonInfo">                                    <h1 class="infoTitle">會員註冊</h1>
+                            <p class="infoDesc">歡迎加入騎士俱樂部！</p>
+                            <h2 class="inputTitle">會員名稱</h2>
+                            <input type="text" id="nameinput" class="msginput" placeholder="請輸入您的稱呼">
+                            <p class="wrongInfo" style="visibility:hidden">無效的帳號</p>
+                            <h2 class="inputTitle">電子信箱</h2>
+                            <input type="email" id="emailinput" class="msginput" placeholder="請輸入您的信箱">
+                            <p class="wrongInfo" style="visibility:hidden">無效的帳號</p>
+                            <h2 class="inputTitle">密碼</h2>
+                            <input type="password" id="passwordinput" class="msginput " placeholder="請輸入您的密碼">
+                            <p class="wrongInfo" style="visibility:hidden">無效的密碼</p>
+                        </div>
+                        <div class="newsAndPolicy">
+                            <div class="newsWrapper">
+                                <input type="radio" id="newsInput">
+                                <label for="newsInput" >
+                                    我願意接收騎士俱樂部的最新消息和優惠資訊
+                                </label>
+                            </div>
+                            <div class="policyWrapper">
+                                <input type="radio" id="policyInput">
+                                <label for="policyInput" >
+                                    我同意
+                                    <a href="#" class="policy">網站服務條款</a>
+                                    及
+                                    <a href="#" class="policy">隱私權政策</a>                                        </label>
+                            </div>      
+                        </div>
+                        <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
+                        <div class="submitWrapper">
+                            <input type="submit" class="sendBtn" value="立即購物！">
+                        </div>
+                        <div class="afterSendWrapper">
+                            <a href="#" id="memberBtn" class="logInBtn">返回登入</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog>
+    <!-- ========= 忘記密碼彈跳 ========= -->
+    <dialog open id="popupForgetId" class="popupForget">
+        <div class="popupwrapper">
+            <!-- 頁首 -->
+            <div class="popHeader">
+                <div class="closeWrapper">
+                    <button type="button" id="btnClose" class="btnClose">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 左邊圖 -->
+            <div class="popContent">
+                <div class="popMemImg">
+                    <div class="popMemBg">
+                        <img src="../popup/popImg/rightLogo.png" alt="">
+                        <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
+                    </div>
+                </div>   
+                <!-- 右邊表格 -->
+                <div class="memContent">
+                    <form action="" id="msgform" class="msgform">
+                        <div class="msgPersonInfo">
+                            <h1 class="infoTitle">忘記密碼</h1>
+                            <p class="infoDesc">我也曾是個騎士，直到我膝蓋中了一箭</p>
+                            <h2 class="inputTitle">註冊信箱</h2>
+                            <input type="email" id="nameinput" class="msginput" placeholder="請輸入您的帳號/電子信箱">
+                            <p>系統將自動發送重設的新密碼到您的信箱</p>
+                        </div>
 
+                        <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
+                        <div class="submitWrapper">
+                            <input type="submit" class="sendBtn" value="送出">
+                        </div>
+                        <div class="afterSendWrapper">
+                            <div class="logAndjoinBtnBox">
+                                <a href="#" class="logInBtn">返回登入</a>
+                                <a href="#" class="regBtn">加入會員</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog>
+    <!-- ========= 右邊小購物車滑出 ========= -->
+    <dialog open id="popupSmCartId" class="popupCart">
+        <div class="cartPopupwrapper">
+            <!-- 頁首和關閉按鈕 -->
+            <div class="cartHeader">
+                <div class="smCartTitleBox">
+                    <h1 class="smCartTitle">購物車</h1>
+                </div>
+                <button type="button" id="cartCloseBtn" class="cartCloseBtn">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </div>
+            <!-- 購物車列表 -->
+            <div class="smCartContent">
+                <form action="" id="smCartform" class="smCartform">
+                    <div class="smCartProducts">
+                        <img src="../popup/popImg/cart1.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">Bell BULLITT-經典黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄16,158</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <div class="smCartProducts">
+                        <img src="../popup/popImg/cart2.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">CHARITES 泡泡鏡 燻黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄580</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <div class="smCartProducts">
+                        <img src="../popup/popImg/cart3.png" alt="" class="smProdImg">
+                        <div class="smCartProDescWrapper">
+                            <div class="smCartProDesc">
+                                <h2 class="smCartProTitle">Chief RTO-II VISOR 黑</h2>
+                                <p class="smCartnumAndPri">1 x NT＄980</p>
+                            </div>
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="SendCart" onclick="window.location.href='../cart/cart.html'">
+                        點我結帳
+                    </button>
+                </form>
+            </div>
+            <!-- 頁尾 -->
+            <div class="popFooter"></div>
+        </div>
+    </dialog> 
 </body>
 </html>
-
-
-
-
-<script>
-
-// 取得漢堡列按鈕及導覽列元素
-const menuBtn = document.querySelector(".menu-btn");
-const navbar = document.querySelector(".navbar");
-
-// 當漢堡列按鈕被點
-menuBtn.addEventListener('click',function(){
-    console.log('test')
-    menuBtn.classList.toggle("open");
-  
-  // 切換導覽列的開關狀態
-  navbar.classList.toggle("open");
-})
-
-const navbarItems = document.querySelectorAll(".navbar li");
-
-navbarItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // 移除所有項目的 active class
-    navbarItems.forEach((item) => {
-      item.classList.remove("active");
-    });
-
-    // 為被點擊的項目加上 active class
-    item.classList.add("active");
-  });
-});
-
-
-
-</script>
+<script src="../popup/js/popup.js"> </script>
+<script src="./js/ham.js"></script>
 
 </body>
 </html>
