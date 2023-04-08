@@ -61,7 +61,7 @@ body{
     overflow: hidden;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
     
-
+    overflow-y: scroll;
     position: fixed;
     top:0;
     left:0;
@@ -81,7 +81,7 @@ body{
     overflow: hidden;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
     
-
+    overflow-y: scroll;
     position: fixed;
     top:0;
     left:0;
@@ -101,7 +101,7 @@ body{
     overflow: hidden;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
     
-
+    overflow-y: scroll;
     position: fixed;
     top:0;
     left:0;

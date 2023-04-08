@@ -66,6 +66,7 @@ to {
     transition: right 0.3s ease-in-out;
     z-index: 8000;
     background-image: url(../img/navbar-rwd.jpg);
+    overflow-y: scroll;
   }
   
   /* 導覽列內的連結樣式 */
@@ -241,7 +242,7 @@ to {
     height: 75px;
     border: none;
     cursor: pointer;
-    z-index: 8000; 
+    z-index: 5000; 
     filter: drop-shadow(0 0px 1px rgba(0, 0, 0, .7));
 }
 
