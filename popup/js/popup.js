@@ -1,30 +1,70 @@
 // !====================== 所有彈窗 ======================!
 // ====================== 聯繫彈窗 ======================
 // ----------- 開關按鈕
-var commBtn = document.getElementById("commBtn");
-commBtn.addEventListener("click", function(){
-    //打開背景
-    var modal = document.getElementById("modal");
-    modal.classList.add("-modal_style");
-    //打開視窗
-    var commPopupId = document.getElementById("commPopupId");
-    commPopupId.classList.add("-popup_style");
-    // 關閉購物車
-    popupSmCartId.classList.remove("-carPopup_style");
+var commBtns = document.querySelectorAll(".commBtn");
 
+commBtns.forEach(function(btn) {
+  btn.addEventListener("click", function(){
+    openCommPopup();
+  });
 });
+
+function openCommPopup() {
+  //打開背景
+  var modal = document.getElementById("modal");
+  modal.classList.add("-modal_style");
+  
+  //打開視窗
+  var commPopupId = document.getElementById("commPopupId");
+  commPopupId.classList.add("-popup_style");
+  
+  // 關閉購物車
+  popupSmCartId.classList.remove("-carPopup_style");
+}
+
 //點叉叉關閉視窗
 var btnClose = document.getElementById("btnClose");
 btnClose.addEventListener("click", function(){
-    commPopupId.classList.remove("-popup_style");
-    modal.classList.remove("-modal_style");
+  closeCommPopup();
 });
+
 //點黑背景關閉視窗
 var modal = document.getElementById("modal");
 modal.addEventListener("click", function(){
-    commPopupId.classList.remove("-popup_style");
-    modal.classList.remove("-modal_style");
+  closeCommPopup();
 });
+
+function closeCommPopup() {
+  var commPopupId = document.getElementById("commPopupId");
+  var modal = document.getElementById("modal");
+  commPopupId.classList.remove("-popup_style");
+  modal.classList.remove("-modal_style");
+}
+// var commBtn = document.getElementById("commBtn");
+// commBtn.addEventListener("click", function(){
+//     //打開背景
+//     var modal = document.getElementById("modal");
+//     modal.classList.add("-modal_style");
+//     //打開視窗
+//     var commPopupId = document.getElementById("commPopupId");
+//     commPopupId.classList.add("-popup_style");
+//     // 關閉購物車
+//     popupSmCartId.classList.remove("-carPopup_style");
+
+// });
+// //點叉叉關閉視窗
+// var btnClose = document.getElementById("btnClose");
+// btnClose.addEventListener("click", function(){
+//     commPopupId.classList.remove("-popup_style");
+//     modal.classList.remove("-modal_style");
+// });
+// //點黑背景關閉視窗
+// var modal = document.getElementById("modal");
+// modal.addEventListener("click", function(){
+//     commPopupId.classList.remove("-popup_style");
+//     modal.classList.remove("-modal_style");
+
+// });
 // ----------- 填空警告
 const msgform = document.getElementById("msgform")
 const wrongInfo = document.getElementById("wrongInfo")
@@ -44,35 +84,89 @@ msgform.addEventListener('submit', (e) => {
         msgform.submit(); // 送出
     }
 });
+// const sendBtns = document.querySelectorAll(".sendBtn");
+// const wrongInfos = document.querySelectorAll(".wrongInfo");
+
+// sendBtns.forEach((sendBtn, index) => {
+//   const form = sendBtn.closest("form");
+//   form.addEventListener('submit', (e) => {
+//     e.preventDefault(); // 阻止默認送出
+
+//     const msginput = document.querySelectorAll('.msginput');
+//     const nameinput = document.getElementById('nameinput');
+//     const emailinput = document.getElementById('emailinput');
+//     const textinput = document.getElementById('textinput');
+
+//     // 檢查輸入是否為空
+//     if (msginput.value.trim() === '' ||
+//         nameinput.value.trim() === '' || 
+//         emailinput.value.trim() === '' || 
+//         textinput.value.trim() === '' ) {
+//         wrongInfos[index].style.visibility = 'visible';
+//     } else {
+//         form.submit(); // 送出
+//     }
+//   });
+// });
 // ====================== 登入會員彈窗 ======================
-var memberBtn = document.getElementsByName("memberBtn")[0];
+var memberBtns = document.getElementsByName("memberBtn");
 var popupId = document.getElementById("popupId");
 var popupRegId = document.getElementById("popupRegId");
 var popupForgetId = document.getElementById("popupForgetId");
 var modal = document.getElementById("modal");
-// ----------- 開關按鈕
-memberBtn.addEventListener("click", function(){
-    // console.log('a');
+
+// 註冊每個按鈕的點擊事件
+memberBtns.forEach(function(memberBtn) {
+  memberBtn.addEventListener("click", function() {
     //打開背景
     modal.classList.add("-modal_style");
     //打開視窗
     popupId.classList.add("-popup_style");
     // 關閉購物車
     popupSmCartId.classList.remove("-carPopup_style");
-
+  });
 });
+
 //點叉叉關閉視窗
 var btnClose = document.getElementsByClassName("btnClose")[1];
 btnClose.addEventListener("click", function(){
-    // console.log("a");
-    popupId.classList.remove("-popup_style");
-    modal.classList.remove("-modal_style");
+  popupId.classList.remove("-popup_style");
+  modal.classList.remove("-modal_style");
 });
+
 //點黑背景關閉視窗
 modal.addEventListener("click", function(){
-    popupId.classList.remove("-popup_style");
-    modal.classList.remove("-modal_style");
+  popupId.classList.remove("-popup_style");
+  modal.classList.remove("-modal_style");
 });
+// var memberBtn = document.getElementsByName("memberBtn")[0];
+// var popupId = document.getElementById("popupId");
+// var popupRegId = document.getElementById("popupRegId");
+// var popupForgetId = document.getElementById("popupForgetId");
+// var modal = document.getElementById("modal");
+// // ----------- 開關按鈕
+// memberBtn.addEventListener("click", function(){
+//     // console.log('a');
+//     //打開背景
+//     modal.classList.add("-modal_style");
+//     //打開視窗
+//     popupId.classList.add("-popup_style");
+//     // 關閉購物車
+//     popupSmCartId.classList.remove("-carPopup_style");
+
+// });
+// //點叉叉關閉視窗
+// var btnClose = document.getElementsByClassName("btnClose")[1];
+// btnClose.addEventListener("click", function(){
+//     // console.log("a");
+//     popupId.classList.remove("-popup_style");
+//     modal.classList.remove("-modal_style");
+// });
+// //點黑背景關閉視窗
+// modal.addEventListener("click", function(){
+//     popupId.classList.remove("-popup_style");
+//     modal.classList.remove("-modal_style");
+// });
 // ====================== 註冊會員彈窗 ======================
 var regBtn = document.getElementsByClassName("regBtn")[0];
 regBtn.addEventListener("click", function(){
@@ -151,24 +245,51 @@ regBtn.addEventListener("click", function(){
 });
 // ====================== 右邊滑入小購物車視窗 ======================
 var popupSmCartId = document.getElementById("popupSmCartId");
-// ----------- 開關按鈕
-var cartBtn = document.getElementsByName("cartBtn")[0];
-cartBtn.addEventListener("click", function(){
+var cartBtns = document.getElementsByName("cartBtn");
+var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
+var modal = document.getElementById("modal");
+
+// 註冊每個「加入購物車」按鈕的點擊事件
+cartBtns.forEach(function(cartBtn) {
+  cartBtn.addEventListener("click", function() {
     //打開視窗
     popupSmCartId.classList.add("-carPopup_style");
     modal.classList.add("-cartModal_style");
     popupId.classList.remove("-popup_style");
     popupForgetId.classList.remove("-popup_style");
+  });
 });
+
 //點叉叉關閉視窗
-var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
 cartCloseBtn.addEventListener("click", function(){
-    // console.log("a");
-    modal.classList.remove("-cartModal_style");
-    popupSmCartId.classList.remove("-carPopup_style");
+  modal.classList.remove("-cartModal_style");
+  popupSmCartId.classList.remove("-carPopup_style");
 });
+
 // 點視窗外面關閉
 modal.addEventListener("click", function(){
-    popupSmCartId.classList.remove("-carPopup_style");
-    modal.classList.remove("-cartModal_style");
+  popupSmCartId.classList.remove("-carPopup_style");
+  modal.classList.remove("-cartModal_style");
 });
+// var popupSmCartId = document.getElementById("popupSmCartId");
+// // ----------- 開關按鈕
+// var cartBtn = document.getElementsByName("cartBtn")[0];
+// cartBtn.addEventListener("click", function(){
+//     //打開視窗
+//     popupSmCartId.classList.add("-carPopup_style");
+//     modal.classList.add("-cartModal_style");
+//     popupId.classList.remove("-popup_style");
+//     popupForgetId.classList.remove("-popup_style");
+// });
+// //點叉叉關閉視窗
+// var cartCloseBtn = document.getElementsByClassName("cartCloseBtn")[0];
+// cartCloseBtn.addEventListener("click", function(){
+//     // console.log("a");
+//     modal.classList.remove("-cartModal_style");
+//     popupSmCartId.classList.remove("-carPopup_style");
+// });
+// // 點視窗外面關閉
+// modal.addEventListener("click", function(){
+//     popupSmCartId.classList.remove("-carPopup_style");
+//     modal.classList.remove("-cartModal_style");
+// });

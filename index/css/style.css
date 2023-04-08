@@ -173,12 +173,16 @@ to {
   }  
 
 
-/* 414w 導覽&LOGO */
+/* 414w 導覽&LOGO&頁首標題 */
+.rwdLogoLink{
+    display: none;
+}
+
 .rwdLogo{
     border: 0;
     background: #ffffff00;
     position: fixed;
-    top: 1m0px;
+    top: 10px;
     right: 20px;
     width: 75px;
     height: 75px;
@@ -190,6 +194,60 @@ to {
 .rwdLogo img{
     width: 100%;
     filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.4));
+}
+
+.rwdTitle{
+    display: none;
+    width: 50%;
+    position: absolute;
+    top: 270px;
+    right: 20px;
+    z-index: 2; 
+
+    color: white;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle h1{
+    font-weight: bold;
+    font-size: 30px;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle h2,.rwdTitle h3{
+    font-weight: normal;
+    font-size: 20px;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle p{
+    color: #cacaca;
+    font-weight: normal;
+    font-size: 18px;
+    border-bottom: 2px solid #ffffff;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+    padding-bottom: 5px;
+}
+
+/* ----------- 回到最上面按鈕 ----------- */
+.scroll-to-top-button{
+    display: none;
+    border: 0;
+    background: #ffffff00;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    z-index: 8000; 
+    filter: drop-shadow(0 0px 1px rgba(0, 0, 0, .7));
+}
+
+.scroll-to-top-button i{
+    font-size: 50px;
+    color: #ffffff;
 }
 /* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */

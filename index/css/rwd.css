@@ -13,6 +13,11 @@
         display: block;
     }
 
+    /* Rwd頁首LOGO */
+    .rwdLogoLink{
+        display: block;
+    }
+
     /* 首頁橫幅 */
     .top{
         display: none;
@@ -26,6 +31,10 @@
         display: none;
     }
 
+    .rwdTitle{
+        display: block;
+    }
+
     /* 彈跳視窗 */
     .popMemImg,.popImg{
         display: none !important;
@@ -35,6 +44,13 @@
         width: 80% !important;
     }
 
+    .logAndjoinBtnBox{
+        flex-direction: column;
+    }
+
+    .logAndjoinBtnBox a{
+        padding: 10px 0;
+    }
     /* 頁首輪播 */
     .swiper{
         flex-grow: 1;
@@ -111,11 +127,27 @@
     footer{
         background-image: url(../img/footerBg-RWD.jpg) ;
     }
-    .copyRight p{
-        font-size: 10px;
-        margin-bottom: 40px;
+
+    .footerContent{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footerLogoLink{
+        width: 50px;
+        flex-grow: 1;
+        border-bottom: 1px solid white;
+    }
+    .socialMedia{
+        width: 50px;
+        flex-grow: 1;
+        padding-top: 40px;
     }
 
+    .copyRight p{
+        width: 80%;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
 
     /* 彈跳視窗 */
     .popContent .popMemImg{
@@ -125,6 +157,4 @@
     .popContent .infoTitle{
         font-size: 20px;
     }
-
-
 }

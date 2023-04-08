@@ -19,12 +19,20 @@
         <div id="loading_block">
             <img src="./img/topLogo.svg" alt="" class="loadingImg">
         </div>
+        <!-- =====414w專用===== -->
         <!-- 手機板LOGO -->
-        <a href="../index/index.html">
+        <a href="../index/index.html" class="rwdLogoLink">
             <button  class="rwdLogo">
                 <img src="./img/rwdTopLogo.svg" alt="">
             </button>
         </a>
+        <!-- 手機板頁首標題 -->
+        <div class="rwdTitle">
+            <h1>騎士俱樂部</h1>
+            <p>Knights Club</p>
+            <h2>打造美好的騎車體驗</h2>
+            <h3>安全帽、人身部品…</h3>
+        </div>
         <!-- 漢堡列按鈕 -->
         <button class="menu-btn-rwd">
             <span class="bar-rwd"></span>
@@ -66,21 +74,21 @@
             </li>
                 <!-- 會員 -->
                 <li>
-                    <a type="button" id="memberBtn" name="memberBtn" class="upButt">
+                    <a type="button" id="memberBtn" name="memberBtn" class="memberBtn upButt">
                         <i class="bi bi-person-fill"></i>
                         會員登入
                     </a>
                 </li>
                 <!-- 聯繫我們 -->
                 <li>
-                    <a type="button" id="commBtn" class="upButt">
+                    <a type="button" id="commBtn" class="commBtn upButt">
                         <i class="bi bi-chat-dots"></i>
                         聯繫我們
                     </a>
                 </li>
                 <!-- 購物車 -->
                 <li>
-                    <a type="button" name="cartBtn" class="upButt">
+                    <a type="button" name="cartBtn" class="cartBtn upButt">
                         <i class="bi bi-basket2-fill"></i>
                         購物車
                     </a>
@@ -88,10 +96,16 @@
             </div>
             </ul>
         </nav>
+        <!-- =====414w專用===== -->
+        <!-- 回到最上面按鈕 -->
+        <button id="scroll-to-top-button" class="scroll-to-top-button">
+            <i class="bi bi-caret-up-fill"></i>
+        </button>
         <!-- 彈跳視窗 -->
         <div id="modal" class="modal"></div>
+        <div id="modal-rwd" class="modal-rwd"></div>
         <!-- 聯繫我們彈跳 -->
-        <dialog open id="commPopupId" class="Popup">
+        <dialog open id="commPopupId" class="commPopupId Popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -170,7 +184,7 @@
                             </div>
                             <div class="remberAndForget">
                                 <div class="remberMe">
-                                    <input type="radio" id="remberMeInput" onclick="toggleRadio(event)"><label for="remberMeInput" >記住我</label>
+                                    <input type="radio" id="remberMeInput"><label for="remberMeInput" >記住我</label>
                                 </div>
                                 <div class="forgetP">
                                     <a href="#" id="forgetPBtn">忘記密碼</a>
@@ -391,19 +405,19 @@
                             </li>
                             <!-- 會員 -->
                             <li class="actionMenuLi">
-                                <button type="button" id="memberBtn" name="memberBtn" class="upButt">
+                                <button type="button" id="memberBtn" name="memberBtn" class="memberBtn upButt">
                                     <img src="img/iconUser.svg" alt="" class="userImg">
                                 </button>
                             </li>
                             <!-- 聯繫我們 -->
                             <li class="actionMenuLi">
-                                <button type="button" id="commBtn" class="upButt">
+                                <button type="button" id="commBtn" class="commBtn upButt">
                                     <img src="img/iconComment.svg" alt="" class="commentImg">
                                 </button>
                             </li>
                             <!-- 購物車 -->
                             <li class="actionMenuLi">
-                                <button type="button" name="cartBtn" class="upButt">
+                                <button type="button" name="cartBtn" class=" cartBtn upButt">
                                     <img src="img/iconCart.svg" alt="" class="cartImg">
                                 </button>
                             </li>
@@ -505,7 +519,7 @@
                 </div>
                 <div class="helmetProducts">
                     <div class="helmetCard">
-                        <a href="#" class="helmetLink">
+                        <a href="../productpage/productpage-black.html" class="helmetLink">
                             <div class="helImgWrapper">
                                 <img src="./img/products/Bell-Bullitt-red.png" alt="" class="helImgs">
                             </div>
@@ -516,7 +530,7 @@
                         </a>
                     </div>
                     <div class="helmetCard">
-                        <a href="#" class="helmetLink">
+                        <a href="../productpage/productpage-black.html" class="helmetLink">
                             <div class="helImgWrapper">
                                 <img src="./img/products/Bell-Bullitt-3line.png" alt="" class="helImgs">
                             </div>
@@ -527,7 +541,7 @@
                         </a>
                     </div>
                     <div class="helmetCard">
-                        <a href="#" class="helmetLink">
+                        <a href="../productpage/productpage-black.html" class="helmetLink">
                             <div class="helImgWrapper">
                                 <img src="./img/products/Bell-Bullitt-carbonspeed.png" alt="" class="helImgs">
                             </div>
@@ -539,7 +553,7 @@
                     </div>
                 </div>
                 <button class="accessoriesMore">
-                    <a href="" class="accessoriesMoreLink">商品列表</a>
+                    <a href="../products/products.html" class="accessoriesMoreLink">商品列表</a>
                 </button>
             </div>
         </div>        
@@ -553,7 +567,7 @@
                 </div>
                 <div class="accessoriesProducts">
                     <div class="accessoriesCard">
-                        <a href="#" class="accessoriesLink">
+                        <a href="../productpage/productpage-black.html" class="accessoriesLink">
                             <div class="accImgWrapper">
                                 <img src="./img/products/accpro1.png" alt="" class="accImgs">
                             </div>
@@ -564,7 +578,7 @@
                         </a>
                     </div>
                     <div class="accessoriesCard">
-                        <a href="#" class="accessoriesLink">
+                        <a href="../productpage/productpage-black.html" class="accessoriesLink">
                             <div class="accImgWrapper">
                                 <img src="./img/products/accpro2.png" alt="" class="accImgs">
                             </div>
@@ -575,7 +589,7 @@
                         </a>
                     </div>
                     <div class="accessoriesCard">
-                        <a href="#" class="accessoriesLink">
+                        <a href="../productpage/productpage-black.html" class="accessoriesLink">
                             <div class="accImgWrapper">
                                 <img src="./img/products/accpro3.png" alt="" class="accImgs">
                             </div>
@@ -586,7 +600,7 @@
                         </a>
                     </div>
                     <div class="accessoriesCard">
-                        <a href="" class="accessoriesLink">
+                        <a href="../productpage/productpage-black.html" class="accessoriesLink">
                             <div class="accImgWrapper">
                                 <img src="./img/products/accpro4.png" alt="" class="accImgs">
                             </div>
@@ -598,7 +612,7 @@
                     </div>
                 </div>
                 <button class="accessoriesMore">
-                    <a href="" class="accessoriesMoreLink">配件列表</a>
+                    <a href="../products/products.html" class="accessoriesMoreLink">配件列表</a>
                 </button>
             </div>
         </div>
@@ -638,6 +652,25 @@
                 //   scrollbar: {
                 //     el: '.swiper-scrollbar',
                 //   },
+            });
+            const scrollToTopButton = document.getElementById('scroll-to-top-button');
+
+            // 監聽按鈕點擊事件
+            scrollToTopButton.addEventListener('click', () => {
+            // 滑動到頂部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            });
+
+            // 監聽頁面滾動事件，顯示或隱藏按鈕
+            window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
             });
         </script>
 
