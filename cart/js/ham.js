@@ -1,6 +1,7 @@
 const menuBtn = document.querySelector(".menu-btn-rwd");
 const navbar = document.querySelector(".navbar-rwd");
 const modalRwd = document.querySelector(".modal-rwd");
+const menuContent = document.querySelector(".menu-content");
 
 menuBtn.addEventListener('click',function(){
   menuBtn.classList.toggle("open");
@@ -10,9 +11,13 @@ menuBtn.addEventListener('click',function(){
   if (navbar.classList.contains("open")) {
     // 隱藏 body 捲軸
     document.body.style.overflow = "hidden";
+    // 顯示菜單內容捲軸
+    menuContent.style.overflowY = "scroll";
   } else {
     // 顯示 body 捲軸
     document.body.style.overflow = "auto";
+    // 隱藏菜單內容捲軸
+    menuContent.style.overflowY = "hidden";
   }
 });
 
@@ -23,6 +28,8 @@ modalRwd.addEventListener('click',function(){
 
   // 顯示 body 捲軸
   document.body.style.overflow = "auto";
+  // 隱藏菜單內容捲軸
+  menuContent.style.overflowY = "hidden";
 });
 
 const navbarItems = document.querySelectorAll(".navbar-rwd li");

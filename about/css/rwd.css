@@ -1,0 +1,128 @@
+@media screen and (max-width: 414px){
+    /* 載入畫面 */
+    .loadingImg {
+        width: 30%;
+    }
+
+    /* 414w 導覽列 */
+    .menu-btn-rwd{
+        display: block;
+    }
+
+    .navbar-rwd{
+        display: block;
+    }
+
+    /* Rwd頁首LOGO */
+    .rwdLogoLink{
+        display: block;
+    }
+
+    /* 首頁原導覽列*/
+    .top{
+        display: none;
+    }
+
+     /* 彈跳視窗 */
+     .popMemImg,.popImg{
+        display: none !important;
+    }
+
+    #commPopupId,.popupReg,.popupForget,.popup{
+        width: 80% !important;
+    }
+
+    .logAndjoinBtnBox{
+        flex-direction: column;
+    }
+
+    .logAndjoinBtnBox a{
+        padding: 10px 0;
+    }
+    
+    /* 彈跳視窗 */
+    .popContent .popMemImg{
+        display: none;
+    }
+
+    .popContent .infoTitle{
+        font-size: 20px;
+    }
+
+    /* 頁尾 */
+    footer{
+        background-image: url(../img/footerBg-RWD.jpg) ;
+    }
+
+    .footerContent{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footerLogoLink{
+        width: 50px;
+        flex-grow: 1;
+        border-bottom: 1px solid white;
+    }
+    .socialMedia{
+        width: 50px;
+        flex-grow: 1;
+        padding-top: 40px;
+    }
+
+    .copyRight p{
+        width: 80%;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* 網頁內容 */
+    .topBanner{
+        height: 480px;
+        background-image: url(../img/aboutBanner.rwd.jpg);
+        background-size: contain;
+        background-position: unset;
+    }
+
+    .bannerBox{
+        width: 100%;
+    }
+
+    .bannerTitle{
+        font-size: 50px;
+        flex-grow: 1;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    /* 關於我內容 */
+
+    .aboutUsTitleBox{
+        width: 80%;
+    }
+    .aboutUsTitleBox h1{
+        font-size: 28px;
+    }
+
+    .aboutUsTitleBox h2{
+        font-size: 25px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 20px;
+    }
+
+    .aboutUsTitleBox p{
+        font-size: 20px;
+    }
+
+    .selectBox{
+        width: 80%;
+    }
+
+    .brandImgBox{
+        display: none;
+    }
+
+    .aboutUsDescBox .aboutUsDesc{
+        margin: 20px 40px;
+    }
+
+}

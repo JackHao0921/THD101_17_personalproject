@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="./css/rwd.css">
         <!-- 彈跳視窗連結 -->
         <link rel="stylesheet" href="../popup/css/popstyle.css">
-        <link rel="stylesheet" href="../popup/css/memberPopstyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
@@ -105,7 +104,7 @@
         <div id="modal" class="modal"></div>
         <div id="modal-rwd" class="modal-rwd"></div>
         <!-- 聯繫我們彈跳 -->
-        <dialog open id="commPopupId" class="commPopupId Popup">
+        <dialog open id="commPopupId" class="commPopupId popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -165,7 +164,7 @@
                 <div class="popContent">
                     <div class="popMemImg">
                         <div class="popMemBg">
-                            <img src="../popup/popImg/rightLogo.png" alt="">
+                            <img src="../popup/popImg/rightImg.jpg" alt="">
                             <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
                         </div>
                     </div>   
@@ -206,7 +205,7 @@
             </div>
         </dialog>
         <!-- ========= 註冊會員彈跳 ========= -->
-        <dialog open id="popupRegId" class="popupReg">
+        <dialog open id="popupRegId" class="popupReg popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -260,7 +259,7 @@
                                 <input type="submit" class="sendBtn" value="立即購物！">
                             </div>
                             <div class="afterSendWrapper">
-                                <a href="#" id="memberBtn" class="logInBtn">返回登入</a>
+                                <a href="#" id="memberBtn" class="memberBtn">返回登入</a>
                             </div>
                         </form>
                     </div>
@@ -270,7 +269,7 @@
             </div>
         </dialog>
         <!-- ========= 忘記密碼彈跳 ========= -->
-        <dialog open id="popupForgetId" class="popupForget">
+        <dialog open id="popupForgetId" class="popupForget popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -628,6 +627,26 @@
                     }, 1000);
                 },1000);
             });
+            // 點一下滑到最上面功能
+            const scrollToTopButton = document.getElementById('scroll-to-top-button');
+
+            // 監聽按鈕點擊事件
+            scrollToTopButton.addEventListener('click', () => {
+                // 滑動到頂部
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 監聽頁面滾動事件，顯示或隱藏按鈕
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    scrollToTopButton.style.display = 'block';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
 
             // ---------------------- 圖片換頁功能 ----
             var mySwiper = new Swiper ('.swiper', {
@@ -652,25 +671,6 @@
                 //   scrollbar: {
                 //     el: '.swiper-scrollbar',
                 //   },
-            });
-            const scrollToTopButton = document.getElementById('scroll-to-top-button');
-
-            // 監聽按鈕點擊事件
-            scrollToTopButton.addEventListener('click', () => {
-            // 滑動到頂部
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            });
-
-            // 監聽頁面滾動事件，顯示或隱藏按鈕
-            window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
             });
         </script>
 

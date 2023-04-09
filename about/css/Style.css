@@ -9,6 +9,247 @@ body{
 
 .wrapper{}
 
+/* 載入中畫面 */
+#loading_block{
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/loadingBg.jpg);
+    background-size: cover;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+.hide {
+    animation: slide-up .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-up {
+from {
+    transform: translateY(0);
+    opacity: 1;
+}
+to {
+    transform: translateY(-110%);
+    opacity: .7;
+}
+}
+
+.loadingImg {
+    width: auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadein 1s ease-in-out;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 導覽列的初始樣式 */
+.navbar-rwd {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px; /* 導覽列往左移出畫面 */
+    width: 250px;
+    height: 100%;
+    transition: right 0.3s ease-in-out;
+    z-index: 8000;
+    background-image: url(../img/navbar-rwd.jpg);
+    overflow-y: scroll;
+  }
+  
+  /* 導覽列內的連結樣式 */
+  .navbar-rwd ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-rwd li {
+      margin: 0;
+      padding: 0;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-rwd li.active {
+    font-size: 2rem;
+    /* line-height: 4rem; */
+  }
+  
+  .navbar-rwd a{
+    display: block;
+    padding: 20px 0;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px dashed #ddd;
+    filter:drop-shadow( -5px 0px 5px rgba(0, 0, 0, 0.4));
+  }
+  
+  .navbar-rwd i{
+      margin-right: 10px;
+      color: #ffffff;
+  }
+  
+  .upButt{
+      padding: 20px 0;
+      margin: 0 20px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      /* filter:drop-shadow( -5px 0px 5px rgba(0, 0, 0, 0.4)); */
+  }
+  
+  .upButt i{
+      margin-right: 10px;
+      color: #ffffff;
+  }
+  
+  .navbar-rwd li:hover {
+    background-color: #000000;
+  }
+  
+  /* 漢堡列按鈕的樣式 */
+  .menu-btn-rwd {
+    display: none;
+      background: white;
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+      z-index: 8500;
+  }
+  
+  .bar-rwd {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* 漢堡列按鈕的動畫效果 */
+  .menu-btn-rwd.open .bar-rwd:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .menu-btn-rwd.open .bar-rwd:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-btn-rwd.open .bar-rwd:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* 導覽列展開後的樣式 */
+  .navbar-rwd.open {
+    right: 0; /* 導覽列滑入畫面 */
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchForm{
+      display: flex;
+      justify-content: space-between;
+  }  
+
+
+/* 414w 導覽&LOGO&頁首標題 */
+.rwdLogoLink{
+    display: none;
+}
+
+.rwdLogo{
+    border: 0;
+    background: #ffffff00;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    z-index: 8000; 
+}
+
+.rwdLogo img{
+    width: 100%;
+    filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.4));
+}
+
+.rwdTitle{
+    display: none;
+    width: 50%;
+    position: absolute;
+    top: 270px;
+    right: 20px;
+    z-index: 2; 
+
+    color: white;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle h1{
+    font-weight: bold;
+    font-size: 30px;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle h2,.rwdTitle h3{
+    font-weight: normal;
+    font-size: 20px;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+}
+
+.rwdTitle p{
+    color: #cacaca;
+    font-weight: normal;
+    font-size: 18px;
+    border-bottom: 2px solid #ffffff;
+    filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.7));
+    padding-bottom: 5px;
+}
+
+/* ----------- 回到最上面按鈕 ----------- */
+.scroll-to-top-button{
+    display: none;
+    border: 0;
+    background: #ffffff00;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    z-index: 5000; 
+    filter: drop-shadow(0 0px 1px rgba(0, 0, 0, .7));
+}
+
+.scroll-to-top-button i{
+    font-size: 50px;
+    color: #ffffff;
+}
 /* -----------Header----------- */
 /* ----------- 上面ICON跟LOGO ----------- */
 .top{
@@ -232,7 +473,7 @@ footer{
     box-sizing: border-box;
     box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.4);
     padding: 20px 0 !important;
-    margin-top: 20px !important;
+    margin-top: 20px ;
 }
 
 footer .footerContent{
@@ -281,9 +522,8 @@ footer .footerContent{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    box-shadow: inset -10px 10px 20px rgba(0, 0, 0, 0.4);
     position: relative;
-    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 .bannerBox{
@@ -413,6 +653,7 @@ footer .footerContent{
 .selectBox .selectTab{
     flex-grow: 1;
     line-height: 1.6;
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
 }
 
 .selectBox .selectTab:hover{
@@ -441,6 +682,7 @@ footer .footerContent{
     width: 50%;
     flex-grow: 1;
     color: white;
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
 }
 
 .aboutUsDesc h3{
