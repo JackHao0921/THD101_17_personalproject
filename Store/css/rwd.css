@@ -1,4 +1,7 @@
 @media screen and (max-width: 414px){
+    body{
+        max-width: 414px
+    }
     /* 載入畫面 */
     .loadingImg {
         width: 30%;

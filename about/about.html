@@ -464,18 +464,18 @@
                         <a href="../about/about.html" class="pageListLink">關於我們</a>
                     </div>
                 </div>
-                <div class="aboutUsTitleBox">
+                <div class="aboutUsTitleBox wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" style="opacity: 0;">
                     <div class="aboutUsTitle">
                         <h1>Knights Club - 關於我們</h1>
                         <h2>打造美好的騎車體驗</h2>
                         <p>身為一個Knight，騎車不能只是舒適，還要有風格！</p>
                     </div>
                 </div>
-                <div class="selectBox">
+                <div class="selectBox wow animate__fadeInLeft" data-wow-duration="1s">
                     <div class="selectTab" style="border-radius: 0px 10px 0px 0px;">品牌故事</div>
                     <div class="selectTab">安心選帽</div>
                 </div>
-                <div class="aboutUsDescBox">
+                <div class="aboutUsDescBox wow animate__fadeInLeft" data-wow-duration="1s">
                     <div class="brandImgBox"></div>
                     <div class="aboutUsDesc">
                         <h3>品牌故事</h3>
@@ -484,7 +484,7 @@
                         <p>都騎帥不騎快</p>
                     </div>
                 </div>
-                <div class="aboutUsImgs">
+                <div class="aboutUsImgs wow animate__fadeInLeft" data-wow-duration="1s">
                     <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-1.png);"></div>
                     <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-2.png);"></div>
                     <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-3.png);"></div>
@@ -492,7 +492,19 @@
             
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
+            // 動畫設定
+            $(document).ready(function() {
+                new WOW().init();
+                $('.wow').each(function() {
+                    $(this).on('animationend', function() {
+                    $(this).css('opacity', '1');
+                    });
+                });
+            });
             // 載入中畫面
             window.addEventListener('load', function() {
                 setTimeout(function() {
@@ -523,7 +535,6 @@
                     scrollToTopButton.style.display = 'none';
                 }
             });
-
         </script>
         <script src="../popup/js/popup.js"> </script>
         <script src="./js/ham.js"></script>

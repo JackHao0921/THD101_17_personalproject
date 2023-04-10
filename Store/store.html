@@ -465,24 +465,39 @@
                 </div>
             </div>
             <div class="content">
-                <div class="map">
+                <div class="map wow animate__fadeInLeft" data-wow-duration="1s">
                     <iframe src="https://www.google.com/maps/d/embed?mid=1Ujl7im0zoHuPrsxMiS_GkRJmbOkUPnU&ehbc=2E312F" width="640" height="480"></iframe>
                 </div>
-                <div class="storCard">
-                    <h1 class="storH1">台北</h1>
+                <div class="storCard wow animate__fadeInRight" data-wow-duration="1s">
+                    <h1 class="storH1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        台北
+                    </h1>
                     <div class="storDesc">
-                        <h2 class="storH2">VRIDER</h2>
+                        <h2 class="storH2">
+                            <i class="bi bi-shop"></i>
+                            VRIDER
+                        </h2>
                         <p class="storAddr">門市地址：台北市松山區東寧路15號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
                     </div>
                     <div class="storDesc">
-                        <h2 class="storH2">P&J biker studio x GU CAMP 捷寶</h2>
+                        <h2 class="storH2">
+                            <i class="bi bi-shop"></i>
+                            P&J biker studio x GU CAMP 捷寶
+                        </h2>
                         <p class="storAddr">門市地址：台北市松山區東寧路15號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
                     </div>
                 </div>
-                <div class="storCard">
-                    <h1 class="storH1">新北</h1>
+                <div class="storCard wow animate__fadeInRight" data-wow-duration="1s">
+                    <h1 class="storH1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        新北
+                    </h1>
                     <div class="storDesc">
-                        <h2 class="storH2">奇神棧 Bizzarro Knight Parts</h2>
+                        <h2 class="storH2">
+                            <i class="bi bi-shop"></i>
+                            奇神棧 Bizzarro Knight Parts
+                        </h2>
                         <p class="storAddr">門市地址：新北市三重區環河南路121-2號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
                     </div> 
                 </div>
@@ -492,6 +507,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
+            // 動畫設定
+            $(document).ready(function() {
+                new WOW().init();
+                $('.wow').each(function() {
+                    $(this).on('animationend', function() {
+                    $(this).css('opacity', '1');
+                    });
+                });
+            });
             // 載入中畫面
             window.addEventListener('load', function() {
                 setTimeout(function() {
@@ -526,8 +550,7 @@
         <script src="../popup/js/popup.js"> </script>
         <script src="./js/ham.js"></script>
     </body>
-    <div class="beforeFooter">
-        <img src="./img/beforeFooterImg.png" alt="" class="beforeFooterItiems">
+    <div class="beforeFooter wow animate__fadeInUp" data-wow-duration="1s">
         <h4 class="boforeFooterGods">Good old days...</h4>
     </div>
     <footer>

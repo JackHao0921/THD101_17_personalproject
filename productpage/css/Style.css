@@ -450,7 +450,8 @@ to {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* padding-top: 20px; */
+    position: relative;
+    z-index: 10;
 }
 
 .beforeFooter .beforeFooterItiems{

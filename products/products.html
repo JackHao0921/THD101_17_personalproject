@@ -496,7 +496,7 @@
                         <a href="../products/products.html" class="pageListLink">商品列表</a>
                     </div>
                     <div class="prodsWrapper">
-                        <nav class="leftNav">
+                        <nav class="leftNav wow animate__fadeInLeft" data-wow-duration="1s">
                             <ul class="leftNavUl">
                                 <li class="leftNavLi">
                                     <a href="../products/products.html" class="leftNavA">山車帽</a>
@@ -512,7 +512,7 @@
                                 </li>
                             </ul>
                         </nav>
-                        <div class="rightProds">
+                        <div class="rightProds wow animate__fadeInUp" data-wow-duration="1s">
                             <div class="prodsTitle">
                                 <div class="prodsTitleH1">全部商品</div>
                             </div>
@@ -561,7 +561,19 @@
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
+            // 動畫設定
+            $(document).ready(function() {
+                new WOW().init();
+                $('.wow').each(function() {
+                    $(this).on('animationend', function() {
+                    $(this).css('opacity', '1');
+                    });
+                });
+            });
             // 載入中畫面
             window.addEventListener('load', function() {
                 setTimeout(function() {
@@ -592,12 +604,11 @@
                     scrollToTopButton.style.display = 'none';
                 }
             });
-
         </script>
         <script src="../popup/js/popup.js"> </script>
         <script src="./js/ham.js"></script>
     </body>
-    <div class="beforeFooter">
+    <div class="beforeFooter wow animate__fadeInUp" data-wow-duration="1s">
         <h4 class="boforeFooterGods">Good old days...</h4>
     </div>
     <footer>

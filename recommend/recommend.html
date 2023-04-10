@@ -469,6 +469,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
+            // 動畫設定
+            $(document).ready(function() {
+                new WOW().init();
+                $('.wow').each(function() {
+                    $(this).on('animationend', function() {
+                    $(this).css('opacity', '1');
+                    });
+                });
+            });
             // 載入中畫面
             window.addEventListener('load', function() {
                 setTimeout(function() {
@@ -503,7 +512,7 @@
         <script src="../popup/js/popup.js"> </script>
         <script src="./js/ham.js"></script>
     </body>
-    <div class="beforeFooter">
+    <div class="beforeFooter wow animate__fadeInUp" data-wow-duration="1s">
         <img src="./img/beforeFooterImg.png" alt="" class="beforeFooterItiems">
         <h4 class="boforeFooterGods">Good old days...</h4>
     </div>
