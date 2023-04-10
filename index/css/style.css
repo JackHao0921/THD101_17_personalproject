@@ -546,7 +546,7 @@ to {
 .keysWrapper{
     position: absolute;
     top: 20em;
-    right: -10em;
+    right: -5em;
 }
 
 .topKeys{
@@ -833,14 +833,14 @@ to {
     text-align: center;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
-    background-color: none;
+    background: linear-gradient(180deg, #696969 0%, #383838 100%);
     color: #ffffff;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 .accessoriesMore:hover > .accessoriesMoreLink{
-    background-color: rgb(0, 0, 0);
+    background: linear-gradient(180deg, #000000 0%, #000000 100%);
     color: white;
     transition: all .2s ease-out;
 }

@@ -76,22 +76,67 @@
     }
 
     /* 網頁內容 */
-    .topBanner{
-        height: 480px;
-        background-image: url(../img/productsBanner-rwd.jpg);
-        background-size: contain;
-        background-position: unset;
+    .content{
+        width: 80%;
+        padding-top: 100px;
     }
-
-    .bannerBox{
+    .pagetList .pageListLink{
+        font-size: 15px;
+    }
+    .prodpageWrapper{
+        flex-direction: column;
+    }
+    .leftProdImgWrapper{
         width: 100%;
+        flex-grow: 0;
     }
 
-    .bannerTitle{
-        font-size: 50px;
+    .prodOtherSideBox{
+        display: flex;
+    }
+    .prodOtherSideBox button{
+        height: 54px;
+        width: 54px;
+        margin-right: 10px;
+    }
+    .prodOtherSideBox img{
+        height: 40px;
+        width: 40px;
+    }
+
+    .prodTitle{
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #000;
+    }
+    .prodPrice{
+        text-align: center;
+    }
+    .rightprodinfor{
+        width: 100%;
+        flex-grow: 0;
+    }
+
+    .DetailBoxs{
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .accessoriesProducts{
+        flex-direction: column;
+    }
+
+    .titleLines{
+        display: none;
+    }
+
+    .accessoriesTitle{
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .accessoriesTitleContent{
         flex-grow: 1;
-        margin: 0;
-        white-space: nowrap;
+        text-align: center;
     }
-
 }

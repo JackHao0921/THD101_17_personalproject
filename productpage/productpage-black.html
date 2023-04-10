@@ -4,21 +4,124 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="./css/Style.css">
+        <link rel="stylesheet" href="./css/rwd.css">
         <!-- 彈跳視窗連結 -->
         <link rel="stylesheet" href="../popup/css/popstyle.css">
-        <link rel="stylesheet" href="../popup/css/memberPopstyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
         <title>Knights Club | 關於我們</title>
     </head>
     <body>
+        <!-- 載入中畫面 -->
+        <div id="loading_block">
+            <img src="./img/topLogo.svg" alt="" class="loadingImg">
+        </div>
+        <!-- =====414w專用===== -->
+        <!-- 手機板LOGO -->
+        <a href="../index/index.html" class="rwdLogoLink">
+            <button  class="rwdLogo">
+                <img src="./img/rwdTopLogo.svg" alt="">
+            </button>
+        </a>
+        <!-- 漢堡列按鈕 -->
+        <button class="menu-btn-rwd">
+            <span class="bar-rwd"></span>
+            <span class="bar-rwd"></span>
+            <span class="bar-rwd"></span>
+        </button>
+        <!-- 導覽列 -->
+        <nav class="navbar-rwd">
+            <ul>
+                <li class="leftNavLi">
+                    <a href="../products/products.html">
+                        <i class="bi bi-tag-fill"></i>
+                        山車帽
+                    </a>
+                </li>
+                <li class="leftNavLi">
+                    <a href="../products/products.html">
+                        <i class="bi bi-tag-fill"></i>
+                        樂高帽
+                    </a>
+                </li>
+                <li class="leftNavLi">
+                    <a href="../products/products.html">
+                        <i class="bi bi-tag-fill"></i>
+                        3/4安全帽
+                    </a>
+                </li>
+                <li class="leftNavLi">
+                    <a href="../products/products.html">
+                        <i class="bi bi-tags-fill"></i>
+                        周邊配件
+                    </a>
+                </li>
+                <li>
+                    <a href="../about/about.html">
+                        <i class="bi bi-info-circle"></i>
+                        關於我們
+                    </a>
+                </li>
+                <li>
+                    <a href="../products/products.html">
+                        <i class="bi bi-card-list"></i>
+                        商品列表
+                    </a>
+                </li>
+                <li>
+                    <a href="../news/news.html">
+                        <i class="bi bi-bell"></i>
+                        最新消息
+                    </a>
+                </li>
+                <li>
+                    <a href="../Store/store.html">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        經銷據點
+                    </a>
+                </li>
+                <li>
+                    <a href="../recommend/recommend.html">
+                        <i class="bi bi-search-heart"></i>
+                        幫你推薦
+                    </a>
+                </li>
+                <!-- 會員 -->
+                <li>
+                    <a type="button" id="memberBtn" name="memberBtn" class="memberBtn upButt">
+                        <i class="bi bi-person-fill"></i>
+                        會員登入
+                    </a>
+                </li>
+                <!-- 聯繫我們 -->
+                <li>
+                    <a type="button" id="commBtn" class="commBtn upButt">
+                        <i class="bi bi-chat-dots"></i>
+                        聯繫我們
+                    </a>
+                </li>
+                <!-- 購物車 -->
+                <li>
+                    <a type="button" name="cartBtn" class="cartBtn upButt">
+                        <i class="bi bi-basket2-fill"></i>
+                        購物車
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- =====414w專用===== -->
+        <!-- 回到最上面按鈕 -->
+        <button id="scroll-to-top-button" class="scroll-to-top-button">
+            <i class="bi bi-caret-up-fill"></i>
+        </button>
         <!-- 彈跳視窗 -->
         <div id="modal" class="modal"></div>
+        <div id="modal-rwd" class="modal-rwd"></div>
         <!-- 聯繫我們彈跳 -->
-        <dialog open id="commPopupId" class="Popup">
+        <dialog open id="commPopupId" class="commPopupId popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -78,7 +181,7 @@
                 <div class="popContent">
                     <div class="popMemImg">
                         <div class="popMemBg">
-                            <img src="../popup/popImg/rightLogo.png" alt="">
+                            <img src="../popup/popImg/rightImg.jpg" alt="">
                             <!-- <h2 class="popImgSlogan">Soul Searching...</h2> -->
                         </div>
                     </div>   
@@ -97,7 +200,7 @@
                             </div>
                             <div class="remberAndForget">
                                 <div class="remberMe">
-                                    <input type="radio" id="remberMeInput" onclick="toggleRadio(event)"><label for="remberMeInput" >記住我</label>
+                                    <input type="radio" id="remberMeInput"><label for="remberMeInput" >記住我</label>
                                 </div>
                                 <div class="forgetP">
                                     <a href="#" id="forgetPBtn">忘記密碼</a>
@@ -119,7 +222,7 @@
             </div>
         </dialog>
         <!-- ========= 註冊會員彈跳 ========= -->
-        <dialog open id="popupRegId" class="popupReg">
+        <dialog open id="popupRegId" class="popupReg popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -170,10 +273,10 @@
                             </div>
                             <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
                             <div class="submitWrapper">
-                                <input type="submit" class="sendBtn" value="立即購物！">
+                                <input type="button" class="sendBtn" value="開始購物吧！" onclick="window.location.href='../member/member.html'">
                             </div>
                             <div class="afterSendWrapper">
-                                <a href="#" id="memberBtn" class="logInBtn">返回登入</a>
+                                <a href="#" id="memberBtn" class="memberBtn">返回登入</a>
                             </div>
                         </form>
                     </div>
@@ -183,7 +286,7 @@
             </div>
         </dialog>
         <!-- ========= 忘記密碼彈跳 ========= -->
-        <dialog open id="popupForgetId" class="popupForget">
+        <dialog open id="popupForgetId" class="popupForget popup">
             <div class="popupwrapper">
                 <!-- 頁首 -->
                 <div class="popHeader">
@@ -218,7 +321,7 @@
                             </div>
                             <div class="afterSendWrapper">
                                 <div class="logAndjoinBtnBox">
-                                    <a href="#" class="logInBtn">返回登入</a>
+                                    <a href="#" class="memberBtn">返回登入</a>
                                     <a href="#" class="regBtn">加入會員</a>
                                 </div>
                             </div>
@@ -283,6 +386,7 @@
                 <div class="popFooter"></div>
             </div>
         </dialog> 
+
         <div class="wrapper"><!-- Wrapper start -->
             <!-- Header -->
             <header class="top">
@@ -317,19 +421,19 @@
                             </li>
                             <!-- 會員 -->
                             <li class="actionMenuLi">
-                                <button type="button" id="memberBtn" name="memberBtn" class="upButt">
+                                <button type="button" id="memberBtn" name="memberBtn" class="memberBtn upButt">
                                     <img src="img/iconUser.svg" alt="" class="userImg">
                                 </button>
                             </li>
                             <!-- 聯繫我們 -->
                             <li class="actionMenuLi">
-                                <button type="button" id="commBtn" class="upButt">
+                                <button type="button" id="commBtn" class="commBtn upButt">
                                     <img src="img/iconComment.svg" alt="" class="commentImg">
                                 </button>
                             </li>
                             <!-- 購物車 -->
                             <li class="actionMenuLi">
-                                <button type="button" name="cartBtn" class="upButt">
+                                <button type="button" name="cartBtn" class=" cartBtn upButt">
                                     <img src="img/iconCart.svg" alt="" class="cartImg">
                                 </button>
                             </li>
@@ -462,12 +566,12 @@
                         <div class="ProdNumBox">
                             <label for="prodNumLabel" style="color: #A9A9A9;" >商品數量</label>
                             <div class="prodNumPlusAndMinus">
-                                <button id="plus" class="plus">
-                                    <i class="bi bi-plus"></i>
-                                </button>
-                                <input type="number"  id="prodNumInput" class="prodNumInput" name="prodNumInput" value="1" maxlength="5" >
                                 <button id="minus" class="minus">
                                     <i class="bi bi-dash"></i>
+                                </button>
+                                <input type="number"  id="prodNumInput" class="prodNumInput" name="prodNumInput" value="1" maxlength="5" >
+                                <button id="plus" class="plus">
+                                    <i class="bi bi-plus"></i>
                                 </button>
                             </div>
                             <button class="sendNumBtn">立即購買</button>
@@ -580,7 +684,40 @@
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
         <script>
+            // 載入中畫面
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    var loadingBlock = document.getElementById('loading_block');
+                    loadingBlock.classList.add('hide');
+                    setTimeout(function() {
+                    loadingBlock.remove();
+                    }, 1000);
+                },1000);
+            });
+            // 點一下滑到最上面功能
+            const scrollToTopButton = document.getElementById('scroll-to-top-button');
+
+            // 監聽按鈕點擊事件
+            scrollToTopButton.addEventListener('click', () => {
+                // 滑動到頂部
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 監聽頁面滾動事件，顯示或隱藏按鈕
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    scrollToTopButton.style.display = 'block';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
             // 數量增減
             var minusButton = document.getElementById("minus");
             var plusButton = document.getElementById("plus");
@@ -615,8 +752,8 @@
                 });
             });
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <script src="../popup/js/popup.js"> </script>
+        <script src="./js/ham.js"></script>
     </body>
     <div class="beforeFooter">
         <h4 class="boforeFooterGods">Good old days...</h4>
