@@ -4,7 +4,8 @@ body{
     background-image: url(../img/bodyBg.jpg);
     line-height: 1.6;
     font-family: "Noto Sans", "Noto Sans TC", "Noto Sans SC";
-
+    overflow: auto !important;
+    scrollbar-width:auto !important;
 }
 
 .wrapper{}

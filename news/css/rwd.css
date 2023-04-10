@@ -78,7 +78,7 @@
     /* 網頁內容 */
     .topBanner{
         height: 480px;
-        background-image: url(../img/productsBanner-rwd.jpg);
+        background-image: url(../img/newsBannerrwd.jpg);
         background-size: contain;
         background-position: unset;
     }
@@ -93,35 +93,22 @@
         margin: 0;
         white-space: nowrap;
     }
-
-    /* 商品列表內容 */
-
-    .content{
-        width: 80%;
-    }
-    .leftNav{
-        display: none;
+    /* 最新消息內容 */
+    .newsWrapper .newsContent{
+        flex-direction: column;
+        width: auto;
+        padding: 0;
     }
 
-    .rightProds{
+    .newsContent .newsImg{
         width: 100%;
-        padding: 25px 0;
+        padding: 20px 0;
     }
-    .prodsRow{
+    .newsContent .newInfo{
+        margin: 0;
+        padding: 0;
         width: 100%;
+        padding: 20px 0;
     }
-    .prodsCard{
-        width: 43%;
-    }
-
-    .prodsDec{
-        margin: 20px 0;
-    }
-    .prodsH2{
-        font-size: 12px;
-        font-weight: bold;
-    }
-    .prodsP{
-        font-size: 12px;
-    }
+    
 }

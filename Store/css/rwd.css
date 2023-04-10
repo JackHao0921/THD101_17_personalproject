@@ -78,7 +78,7 @@
     /* 網頁內容 */
     .topBanner{
         height: 480px;
-        background-image: url(../img/productsBanner-rwd.jpg);
+        background-image: url(../img/lactionBanner-rwd.jpg);
         background-size: contain;
         background-position: unset;
     }
@@ -93,35 +93,19 @@
         margin: 0;
         white-space: nowrap;
     }
-
-    /* 商品列表內容 */
-
+    /* 銷售據點內容 */
     .content{
+        margin: 0 auto;
+        padding: 0;
         width: 80%;
-    }
-    .leftNav{
-        display: none;
+        flex-direction: column;
     }
 
-    .rightProds{
+    .map{
         width: 100%;
-        padding: 25px 0;
-    }
-    .prodsRow{
-        width: 100%;
-    }
-    .prodsCard{
-        width: 43%;
+        margin: 0;
+        padding: 0;
+        order: 2;
     }
 
-    .prodsDec{
-        margin: 20px 0;
-    }
-    .prodsH2{
-        font-size: 12px;
-        font-weight: bold;
-    }
-    .prodsP{
-        font-size: 12px;
-    }
 }

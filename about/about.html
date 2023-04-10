@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-        <link rel="stylesheet" href="./css/Style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/rwd.css">
         <!-- 彈跳視窗連結 -->
         <link rel="stylesheet" href="../popup/css/popstyle.css">
-        <link rel="stylesheet" href="../popup/css/memberPopstyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
@@ -27,13 +26,6 @@
                 <img src="./img/rwdTopLogo.svg" alt="">
             </button>
         </a>
-        <!-- 手機板頁首標題 -->
-        <div class="rwdTitle">
-            <h1>騎士俱樂部</h1>
-            <p>Knights Club</p>
-            <h2>打造美好的騎車體驗</h2>
-            <h3>安全帽、人身部品…</h3>
-        </div>
         <!-- 漢堡列按鈕 -->
         <button class="menu-btn-rwd">
             <span class="bar-rwd"></span>
@@ -43,36 +35,36 @@
         <!-- 導覽列 -->
         <nav class="navbar-rwd">
             <ul>
-            <li>
-                <a href="../about/about.html">
-                    <i class="bi bi-info-circle"></i>
-                    關於我們
-                </a>
-            </li>
-            <li>
-                <a href="../products/products.html">
-                    <i class="bi bi-card-list"></i>
-                    商品列表
-                </a>
-            </li>
-            <li>
-                <a href="../news/news.html">
-                    <i class="bi bi-bell"></i>
-                    最新消息
-                </a>
-            </li>
-            <li>
-                <a href="../Store/store.html">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    經銷據點
-                </a>
-            </li>
-            <li>
-                <a href="../recommend/recommend.html">
-                    <i class="bi bi-search-heart"></i>
-                    幫你推薦
-                </a>
-            </li>
+                <li>
+                    <a href="../about/about.html">
+                        <i class="bi bi-info-circle"></i>
+                        關於我們
+                    </a>
+                </li>
+                <li>
+                    <a href="../products/products.html">
+                        <i class="bi bi-card-list"></i>
+                        商品列表
+                    </a>
+                </li>
+                <li>
+                    <a href="../news/news.html">
+                        <i class="bi bi-bell"></i>
+                        最新消息
+                    </a>
+                </li>
+                <li>
+                    <a href="../Store/store.html">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        經銷據點
+                    </a>
+                </li>
+                <li>
+                    <a href="../recommend/recommend.html">
+                        <i class="bi bi-search-heart"></i>
+                        幫你推薦
+                    </a>
+                </li>
                 <!-- 會員 -->
                 <li>
                     <a type="button" id="memberBtn" name="memberBtn" class="memberBtn upButt">
@@ -94,7 +86,6 @@
                         購物車
                     </a>
                 </li>
-            </div>
             </ul>
         </nav>
         <!-- =====414w專用===== -->
@@ -194,7 +185,7 @@
 
                             <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
                             <div class="submitWrapper">
-                                <input type="submit" class="sendBtn" value="開始購物吧！">
+                                <input type="button" class="sendBtn" value="開始購物吧！" onclick="window.location.href='../member/member.html'">
                             </div>
                             <div class="afterSendWrapper">
                                 <a href="#" id="regBtn" class="regBtn">加入會員</a>
@@ -258,7 +249,7 @@
                             </div>
                             <p id="wrongInfo" class="wrongInfo" style="visibility:hidden">請填寫所有欄位</p>
                             <div class="submitWrapper">
-                                <input type="submit" class="sendBtn" value="立即購物！">
+                                <input type="button" class="memberBtn sendBtn" value="立即購物！">
                             </div>
                             <div class="afterSendWrapper">
                                 <a href="#" id="memberBtn" class="memberBtn">返回登入</a>
@@ -306,7 +297,7 @@
                             </div>
                             <div class="afterSendWrapper">
                                 <div class="logAndjoinBtnBox">
-                                    <a href="#" class="logInBtn">返回登入</a>
+                                    <a href="#" class="memberBtn">返回登入</a>
                                     <a href="#" class="regBtn">加入會員</a>
                                 </div>
                             </div>

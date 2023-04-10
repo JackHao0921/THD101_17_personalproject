@@ -23,7 +23,7 @@ var memberBtns = document.querySelectorAll(".memberBtn");
 // 打開註冊按鈕
 var regBtns = document.querySelectorAll(".regBtn");
 // 忘記密碼按鈕
-var forgetPBtns = document.querySelectorAll(".forgetPBtn");
+var forgetPBtns = document.querySelectorAll("#forgetPBtn");
 // 開關購物車按鈕
 var cartBtns = document.querySelectorAll(".cartBtn");
 var cartCloseBtn = document.querySelector(".cartCloseBtn");
