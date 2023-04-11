@@ -490,7 +490,7 @@
                         <p>身為一個騎士，騎車不能只是舒適，還要有風格</p>
                         <h3>安全帽、人身部品…</h3>
                         <div class="keysWrapper">
-                            <img src="./img/topkeys.png" alt="" class="topKeys wow animate__backInRight" data-wow-duration="1s" data-wow-delay="1s" style="opacity: 0;">
+                            <img src="./img/topkeys.png" alt="" class="topKeys wow animate__backInRight" data-wow-duration="1s">
                         </div>
                     </div>
                 </div>
@@ -499,7 +499,7 @@
 
         <!-- 頁首影片 -->
         <div class="topVideoWrapper ">
-            <div class="topVideoBuble wow animate__bounceIn" data-wow-duration="1s" data-wow-delay="1.5s"style="opacity: 0;">
+            <div class="topVideoBuble wow animate__bounceIn" data-wow-duration="1s">
                 <h1 class="topVideoWords">＂懷舊情懷，心馳神往＂</h1>
             </div>
             <div class="topVideo wow animate__fadeIn" data-wow-duration="1s">
@@ -558,7 +558,7 @@
             </div>
         </div>        
         <!-- 周邊配件 -->
-        <div class="accessoriesWrapper wow animate__animated animate__fadeInRight" data-wow-duration="1s">
+        <div class="accessoriesWrapper wow animate__animated animate__fadeInLeft" data-wow-duration="1s">
             <div class="accessoriesContent">
                 <div class="accessoriesTitle">
                     <img src="./img/titleLineL.png" alt="" class="titleLines">
@@ -636,7 +636,16 @@
                     loadingBlock.classList.add('hide');
                     setTimeout(function() {
                     loadingBlock.remove();
-                    });
+                    }, 2000); // 添加零毫秒延遲
+                }, 500);
+            });
+            // 搜尋按鈕，輸入時不會退回去
+            $(function() {
+                $('.searchInput').on('focus', function() {
+                    $(this).addClass('hover');
+                });
+                $('.searchInput').on('blur', function() {
+                    $(this).removeClass('hover');
                 });
             });
             // 點一下滑到最上面功能

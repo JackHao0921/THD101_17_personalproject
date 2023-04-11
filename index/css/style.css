@@ -72,6 +72,7 @@ to {
   }
   /* 導覽列底色 */
 .rwdNavBg{
+    pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -359,7 +360,11 @@ to {
     padding: 0;
 }
 
-
+.searchInput.hover{
+    width: 110px;
+    border-bottom: 1px solid #fffb;
+    transition: all 1s ease-out;
+}
 .searchForm:hover > .searchInput{
     width: 110px;
     border-bottom: 1px solid #fffb;

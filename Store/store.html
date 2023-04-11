@@ -469,37 +469,94 @@
                 <div class="map wow animate__fadeInLeft" data-wow-duration="1s">
                     <iframe src="https://www.google.com/maps/d/embed?mid=1Ujl7im0zoHuPrsxMiS_GkRJmbOkUPnU&ehbc=2E312F" width="640" height="480"></iframe>
                 </div>
-                <div class="storCard wow animate__fadeInRight" data-wow-duration="1s">
+                <div class="storCard wow animate__fadeInLeft" data-wow-duration="1s">
                     <h1 class="storH1">
-                        <i class="bi bi-geo-alt-fill"></i>
+                        <i class="bi bi-pin-angle-fill"></i>
                         台北
                     </h1>
                     <div class="storDesc">
                         <h2 class="storH2">
                             <i class="bi bi-shop"></i>
-                            VRIDER
+                            華山分部
                         </h2>
-                        <p class="storAddr">門市地址：台北市松山區東寧路15號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
+                        <p class="storAddr">
+                            <i class="bi bi-telephone-fill"></i>
+                            02-94539453
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-shop"></i>
+                            台北市中正區八德路888號
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-clock"></i>10:30~22:30
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-basket"></i>
+                            全品項，除部分手套外
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-facebook"></i>
+                            騎士俱樂部 華山分部
+                        </p>
                     </div>
                     <div class="storDesc">
                         <h2 class="storH2">
                             <i class="bi bi-shop"></i>
-                            P&J biker studio x GU CAMP 捷寶
+                            中山分部
                         </h2>
-                        <p class="storAddr">門市地址：台北市松山區東寧路15號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
+                        <p class="storAddr">
+                            <i class="bi bi-telephone-fill"></i>
+                            02-94539453
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-shop"></i>
+                            台北市中山區南京西路888號
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-clock"></i>
+                            10:30~22:30
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-basket"></i>
+                            全品項
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-facebook"></i>
+                            騎士俱樂部 中山分部
+                        </p>
                     </div>
                 </div>
-                <div class="storCard wow animate__fadeInRight" data-wow-duration="1s">
+                <div class="storCard wow animate__fadeInLeft" data-wow-duration="1s">
                     <h1 class="storH1">
-                        <i class="bi bi-geo-alt-fill"></i>
+                        <i class="bi bi-pin-angle-fill"></i>
                         新北
                     </h1>
                     <div class="storDesc">
                         <h2 class="storH2">
                             <i class="bi bi-shop"></i>
-                            奇神棧 Bizzarro Knight Parts
+                            三重分部
                         </h2>
-                        <p class="storAddr">門市地址：新北市三重區環河南路121-2號<br>聯絡電話：02-27560698<br>經銷款式：全款式</p>
+                        <p class="storAddr">
+                            <i class="bi bi-telephone-fill"></i>
+                            02-94539453
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-shop"></i>
+                            新北市三重區環河南路888號
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-clock"></i>
+                            10:30~22:30
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-basket"></i>
+                            全品項
+                        </p>
+                        <p class="storAddr">
+                            <i class="bi bi-facebook"></i>
+                            騎士俱樂部 三重分部
+                        </p>
+                    </div>
                     </div> 
                 </div>
             </div>
@@ -524,9 +581,19 @@
                     loadingBlock.classList.add('hide');
                     setTimeout(function() {
                     loadingBlock.remove();
-                    });
+                    }, 2000); // 添加零毫秒延遲
+                }, 500);
+            });
+            // 搜尋按鈕，輸入時不會退回去
+            $(function() {
+                $('.searchInput').on('focus', function() {
+                    $(this).addClass('hover');
+                });
+                $('.searchInput').on('blur', function() {
+                    $(this).removeClass('hover');
                 });
             });
+
             // 點一下滑到最上面功能
             const scrollToTopButton = document.getElementById('scroll-to-top-button');
 

@@ -485,7 +485,16 @@
                     loadingBlock.classList.add('hide');
                     setTimeout(function() {
                     loadingBlock.remove();
-                    });
+                    }, 2000); // 添加零毫秒延遲
+                }, 500);
+            });
+            // 搜尋按鈕，輸入時不會退回去
+            $(function() {
+                $('.searchInput').on('focus', function() {
+                    $(this).addClass('hover');
+                });
+                $('.searchInput').on('blur', function() {
+                    $(this).removeClass('hover');
                 });
             });
             // 點一下滑到最上面功能
