@@ -81,6 +81,7 @@
         background-image: url(../img/mamberBanner-rwd.jpg);
         background-size: contain;
         background-position: unset;
+        background-attachment: unset;
     }
 
     .bannerBox{

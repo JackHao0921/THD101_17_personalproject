@@ -84,6 +84,7 @@
         background-image: url(../img/lactionBanner-rwd.jpg);
         background-size: contain;
         background-position: unset;
+        background-attachment: unset;
     }
 
     .bannerBox{

@@ -79,6 +79,7 @@
     .topBanner{
         height: 480px;
         background-image: url(../img/aboutBanner.rwd.jpg);
+        background-attachment: unset;
         background-size: contain;
         background-position: unset;
     }
