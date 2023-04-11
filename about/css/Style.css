@@ -68,7 +68,18 @@ to {
     background-image: url(../img/navbar-rwd.jpg);
     overflow-y: scroll;
   }
-  
+  /* 導覽列底色 */
+.rwdNavBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 0;
+    height: 90px;
+    background: linear-gradient(180deg, #696969 0%, #383838 100%);
+    transition: all 0.3s ease-in-out;
+}
   /* 導覽列內的連結樣式 */
   .navbar-rwd ul {
     list-style: none;

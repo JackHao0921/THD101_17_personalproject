@@ -20,6 +20,7 @@
             <img src="./img/topLogo.svg" alt="" class="loadingImg">
         </div>
         <!-- =====414w專用===== -->
+        <div class="rwdNavBg"></div>
         <!-- 手機板LOGO -->
         <a href="../index/index.html" class="rwdLogoLink">
             <button  class="rwdLogo">
@@ -112,6 +113,7 @@
                 </li>
             </ul>
         </nav>
+
         <!-- =====414w專用===== -->
         <!-- 回到最上面按鈕 -->
         <button id="scroll-to-top-button" class="scroll-to-top-button">
@@ -478,26 +480,47 @@
                 <div class="prodpageWrapper">
                     <!-- 左側商品 -->
                     <div class="leftProdImgWrapper">
-                        <div class="mainImg" style="background-image: url(./img/prod-black-first.png);"></div>
-                        <div class="prodOtherSideBox">
-                            <button>
-                                <img src="./img/prodSideIcon-first.png" alt="">
-                            </button>
-                            <button>
-                                <img src="./img/prodSideIcon-front.png" alt="">
-                            </button>
-                            <button>
-                                <img src="./img/prodSideIcon-right.png" alt="">
-                            </button>
-                            <button>
-                                <img src="./img/prodSideIcon-back.png" alt="">
-                            </button>
-                            <button>
-                                <img src="./img/prodSideIcon-left.png" alt="">
-                            </button>
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./img/prod-black-first.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/prod-black-front.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/prod-black-right.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/prod-black-back.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/prod-black-left.png" />
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper">
+                            <div class="swiper-wrapper thumb">
+                                <div class="swiper-slide thumb">
+                                    <img src="./img/prod-black-first.png" />
+                                </div>
+                                <div class="swiper-slide thumb">
+                                    <img src="./img/prod-black-front.png" />
+                                </div>
+                                <div class="swiper-slide thumb">
+                                    <img src="./img/prod-black-right.png" />
+                                </div>
+                                <div class="swiper-slide thumb">
+                                    <img src="./img/prod-black-back.png" />
+                                </div>
+                                <div class="swiper-slide thumb">
+                                    <img src="./img/prod-black-left.png" />
+                                </div> 
+                            </div>
                         </div>
                     </div>
-
                     <!-- 右側商品 -->
                     <div class="rightprodinfor">
                         <h1 class="prodTitle">BELL BULLITT-經典黑</h1>
@@ -709,7 +732,6 @@
             });
             // 點一下滑到最上面功能
             const scrollToTopButton = document.getElementById('scroll-to-top-button');
-
             // 監聽按鈕點擊事件
             scrollToTopButton.addEventListener('click', () => {
                 // 滑動到頂部
@@ -718,7 +740,6 @@
                     behavior: 'smooth'
                 });
             });
-
             // 監聽頁面滾動事件，顯示或隱藏按鈕
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 100) {
@@ -727,6 +748,59 @@
                     scrollToTopButton.style.display = 'none';
                 }
             });
+
+            // 商品圖swiper
+            var swiper = new Swiper(".mySwiper", {
+                loop: false,
+                spaceBetween: 10,
+                slidesPerView: 5,
+                freeMode: true,
+                watchSlidesProgress: true,
+                });
+            var swiper2 = new Swiper(".mySwiper2", {
+                loop: true,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+            // 點選按鈕，重複點擊時取消選取
+
+            const sizes = document.querySelectorAll('.prodSizes input[type="radio"]');
+            sizes.forEach(size => {
+                size.addEventListener("click", () => {
+                    if (size.checked) {
+                    size.classList.add("selected");
+                    const label = size.nextElementSibling;
+                    label.classList.add("selected");
+                    // label.textContent += ` ${size.value}`;
+                    } else {
+                    size.classList.remove("selected");
+                    const label = size.nextElementSibling;
+                    label.classList.remove("selected");
+                    label.textContent = label.textContent.replace(` ${size.value}`, '');
+                    }
+                });
+            });
+            document.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target.nodeName !== "INPUT" && target.type !== "radio") {
+                sizes.forEach(size => {
+                if (size.checked) {
+                    size.checked = false;
+                    size.classList.remove("selected");
+                    const label = size.nextElementSibling;
+                    label.classList.remove("selected");
+                    label.textContent = label.textContent.replace(` ${size.value}`, '');
+                }
+                });
+            }
+            });
+
             // 數量增減
             var minusButton = document.getElementById("minus");
             var plusButton = document.getElementById("plus");
@@ -745,21 +819,31 @@
             // 描述下拉
             const clickBoxes = document.querySelectorAll('.clickBox');
             const descBoxes = document.querySelectorAll('.DescBox');
+
             clickBoxes.forEach((clickBox, index) => {
                 clickBox.addEventListener('click', function() {
+                    const bis = Array.from(clickBox.querySelectorAll('.bi')); // 将 bis 变量的获取位置移动到这里
                     const descBox = descBoxes[index];
                     const descBoxStyle = window.getComputedStyle(descBox);
+
                     if (descBoxStyle.display === "block") {
-                        descBox.style.height = "0";
-                        setTimeout(function() {
-                            descBox.style.display = "none";
-                        }, 500); // 等待動畫結束後再隱藏
+                    bis.forEach((bi) => {
+                        bi.style.transform = "rotate(0)";
+                    });
+                    descBox.style.height = "0";
+                    setTimeout(function() {
+                        descBox.style.display = "none";
+                    }, 500); // 等待動畫結束後再隱藏
                     } else {
-                        descBox.style.display = "block";
-                        descBox.style.height = descBox.scrollHeight + "px";
+                    bis.forEach((bi) => {
+                        bi.style.transform = "rotate(180deg)";
+                    });
+                    descBox.style.display = "block";
+                    descBox.style.height = descBox.scrollHeight + "px";
                     }
                 });
             });
+
         </script>
         <script src="../popup/js/popup.js"> </script>
         <script src="./js/ham.js"></script>

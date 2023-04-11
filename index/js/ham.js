@@ -3,6 +3,22 @@ const menuBtn = document.querySelector(".menu-btn-rwd");
 const navbar = document.querySelector(".navbar-rwd");
 const modalRwd = document.querySelector(".modal-rwd");
 const navbarItems = document.querySelectorAll(".navbar-rwd li");
+const rwdNavBg = document.getElementsByClassName('rwdNavBg')[0];
+
+// 在寬度414時，滑鼠往下滾之後導覽列自動出現底色
+// 監聽畫面寬度是否小於 414
+const mediaQuery = window.matchMedia('(max-width: 414px)');
+
+// 如果畫面寬度小於 414，則監聽頁面滾動事件，顯示或隱藏按鈕
+if (mediaQuery.matches) {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+      rwdNavBg.style.opacity = '.4';
+    } else {
+      rwdNavBg.style.opacity = '0';
+    }
+  });
+}
 
 // 當漢堡列按鈕被點
 menuBtn.addEventListener('click',function(){

@@ -91,7 +91,21 @@
         flex-grow: 0;
     }
 
-    .prodOtherSideBox{
+    .swiper.mySwiper2{
+        height: 300px;
+    }
+    .swiper-slide img{
+        height: 80%;
+        transform: translatey(20px);
+    }
+    .swiper-thumbs{
+        width: auto;
+    }
+
+    .swiper-slide.thumb img{
+        transform: translateY(0px);
+    }
+    /* .prodOtherSideBox{
         display: flex;
     }
     .prodOtherSideBox button{
@@ -102,7 +116,7 @@
     .prodOtherSideBox img{
         height: 40px;
         width: 40px;
-    }
+    } */
 
     .prodTitle{
         margin-top: 20px;
