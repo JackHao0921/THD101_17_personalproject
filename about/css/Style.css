@@ -639,9 +639,9 @@ footer .footerContent{
 }
 
 /* 關於我們和品牌故事 */
+/* 上方分頁按鈕 */
 .selectBox{
     width: 40%;
-    display: flex;
     background-color: gray;
     color: white;
     text-align: center;
@@ -649,32 +649,67 @@ footer .footerContent{
     border-radius: 0px 10px 0px 0px;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: -0px -5px 10px rgba(0, 0, 0, 0.4);
+
+    position: relative;
+    z-index: 10;
 }
 
-.selectBox .selectTab{
+.tab-nav{
+    display: flex;
+}
+
+.selectTab{
     flex-grow: 1;
     line-height: 1.6;
-    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
+    list-style-type: none;
+    border-radius: 0px 10px 0px 0px;
 }
 
-.selectBox .selectTab:hover{
+.selectTab:hover{
     background-color: black;
-    border-radius: 0px 10px 0px 0px;
+}
+
+.tabLink{
+    display: block;
+    width: 100%;
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.selectTab.active{
+    background: black;
+}
+
+/* 分頁內容 */
+.tab-content .tab {
+    display: none;
+}
+
+.tab-content .tab.active {
+    display: block;
 }
 
 .aboutUsDescBox{
     display: flex;
     background: linear-gradient(90deg, #555, #838383, #555);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .aboutUsDescBox .brandImgBox{
     width: 50%;
-    background-image: url(../img/brandStory-First.png);
+    /* background-image: url(../img/brandStory-First.png); */
     flex-grow: 1;
-    height: 300px;
+    /* height: 300px; */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.brandImgBox img{
+    display: block;
+    width: 100%;
 }
 
 .aboutUsDescBox .aboutUsDesc{
@@ -684,6 +719,9 @@ footer .footerContent{
     flex-grow: 1;
     color: white;
     filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
+
+    position: relative;
+    z-index: 10;
 }
 
 .aboutUsDesc h3{
@@ -695,11 +733,19 @@ footer .footerContent{
 }
 
 /* 關於我們下方圖片 */
+.banner{
+    height: auto;
+
+    position: relative;
+    z-index: 10;
+}
+
 .aboutUsImgs{
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    height: 20em;
+    overflow: hidden;
+    height: auto;
 }
 
 .aboutUsImgs .aboutUsImg{
@@ -712,4 +758,8 @@ footer .footerContent{
 
 .aboutUsImgs .aboutUsImg:hover{
     flex-grow: 1;
+}
+
+.owl-dots{
+    display: none;
 }

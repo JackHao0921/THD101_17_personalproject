@@ -673,7 +673,7 @@ a{
 /* 右邊商品列表 */
 .rightProds{
     width: 78%;
-    padding: 25px 23px 0;
+    padding: 25px 0 0 23px;
     box-sizing: border-box;
     
 }
@@ -699,10 +699,7 @@ a{
 
 .prodsCard{
     display: block;
-    /* grow/shrink/basis */
-    /* flex: 1 0 calc(33.33% - 20px); */
-    padding: 10px;
-    width: 31.24%;
+    width: 33.3%;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.3);
 }

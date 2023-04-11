@@ -68,6 +68,17 @@ modal.addEventListener("click", function(){
 });
 
 // ----------- 填空警告
+// const msginputs = document.querySelectorAll(".msginput")
+// const wrongInfos = document.querySelectorAll(".wrongInfo")
+// const sendBtns = document.querySelectorAll(".sendBtn")
+// sendBtns.addEventListener('click', () => {
+//     // 檢查輸入是否為空
+//     if (msginputs.value.trim() === '') {
+//       wrongInfos.style.visibility = 'visible';
+//     } else {
+//       $(this)onclick="window.location.href='../member/member.html'"
+//     }
+// });
 const msgform = document.getElementById("msgform")
 const wrongInfo = document.getElementById("wrongInfo")
 msgform.addEventListener('submit', (e) => {

@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="../popup/css/popstyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rye&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
         <title>Knights Club | 關於我們</title>
     </head>
@@ -464,6 +466,7 @@
                         <a href="../about/about.html" class="pageListLink">關於我們</a>
                     </div>
                 </div>
+
                 <div class="aboutUsTitleBox wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" style="opacity: 0;">
                     <div class="aboutUsTitle">
                         <h1>Knights Club - 關於我們</h1>
@@ -471,23 +474,66 @@
                         <p>身為一個Knight，騎車不能只是舒適，還要有風格！</p>
                     </div>
                 </div>
-                <div class="selectBox wow animate__fadeInLeft" data-wow-duration="1s">
-                    <div class="selectTab" style="border-radius: 0px 10px 0px 0px;">品牌故事</div>
-                    <div class="selectTab">安心選帽</div>
-                </div>
-                <div class="aboutUsDescBox wow animate__fadeInLeft" data-wow-duration="1s">
-                    <div class="brandImgBox"></div>
-                    <div class="aboutUsDesc">
-                        <h3>品牌故事</h3>
-                        <p>騎士俱樂部目標是美化市容</p>
-                        <p>讓每一位騎在路上的騎士</p>
-                        <p>都騎帥不騎快</p>
+                
+                <div class="tabs wow animate__fadeInLeft" data-wow-duration="1s">
+                    <!-- 分頁按鈕 -->
+                    <div class="selectBox">
+                        <ul class="tab-nav">
+                            <li class="selectTab">
+                                <a href="#tab1" class="tabLink" style="border-radius: 0px 10px 0px 0px;">
+                                    品牌故事
+                                </a>
+                            </li>
+                            <li class="selectTab">
+                                <a href="#tab2 "class="tabLink" >安心選帽</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 分頁內容 -->
+                    <div class="tab-content">
+                        <div id="tab1" class="tab">
+                            <div class="aboutUsDescBox">
+                                <div class="brandImgBox">
+                                    <img src="./img/brandStory-First.png" alt="">
+                                </div>
+                                <div class="aboutUsDesc">
+                                    <h3>品牌故事</h3>
+                                    <p>騎士俱樂部目標是美化市容</p>
+                                    <p>讓每一位騎在路上的騎士</p>
+                                    <p>都騎帥不騎快</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab">
+                            <div class="aboutUsDescBox">
+                                <div class="brandImgBox">
+                                    <img src="./img/safity.png" alt=""> 
+                                </div>
+                                <div class="aboutUsDesc">
+                                    <h3>安心選帽</h3>
+                                    <p>騎車除了暢快，還要兼顧安全</p>
+                                    <p>騎士俱樂部絕對不選</p>
+                                    <p>沒有安全認證的安全帽</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="aboutUsImgs wow animate__fadeInLeft" data-wow-duration="1s">
-                    <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-1.png);"></div>
-                    <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-2.png);"></div>
-                    <div class="aboutUsImg" style="background-image: url(./img/aboutUsImg-3.png);"></div>
+                <div id="banner " class="wow animate__fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s" style="opacity: 0;">
+                    <div class="aboutUsImgs owl-carousel owl-theme ">
+                        <div class="aboutUsImg item">
+                            <img src="./img/aboutUsImg-1.png" alt="banner1">
+                        </div>
+                        <div class="aboutUsImg item">
+                            <img src="./img/aboutUsImg-2.png" alt="banner2">
+                        </div>
+                        <div class="aboutUsImg item" >
+                            <img src="./img/aboutUsImg-3.png" alt="banner3">
+                        </div>
+                        <div class="aboutUsImg item" >
+                            <img src="./img/aboutUsImg-4.png" alt="banner4">
+                        </div>
+                    </div>
                 </div>
             
             </div>
@@ -495,14 +541,53 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
-        <script>
-            // 動畫設定
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>          
             $(document).ready(function() {
+                // 動畫設定
                 new WOW().init();
                 $('.wow').each(function() {
                     $(this).on('animationend', function() {
                     $(this).css('opacity', '1');
                     });
+                });
+                // 分頁功能
+                // 初始化，顯示第一個 Tab及按鈕
+                $('.selectTab:first-child').addClass('active');
+                $('.tab-content .tab:first-child').addClass('active');
+
+                // 點擊 Tab 時切換 Tab 內容
+                $('.selectTab a').on('click', function(e) {
+                    e.preventDefault();
+
+                    // 移除 active 類別
+                    $('.selectTab').removeClass('active');
+                    $('.tab-content .tab').removeClass('active');
+
+                    // 加上 active 類別
+                    $(this).parent().addClass('active');
+                    $($(this).attr('href')).addClass('active');
+                });
+                // 圖片輪播設定
+                $('.owl-carousel').owlCarousel({
+                    loop:true,
+                    margin:0,
+                    responsiveClass:true,
+                    responsive:{
+                        0:{
+                            items:2,
+                            nav:false
+                        },
+                        600:{
+                            items:3,
+                            nav:false
+                        },
+                        1000:{
+                            items:3,
+                            nav:false,
+                            loop:true
+                        }
+                    }
                 });
             });
             // 載入中畫面

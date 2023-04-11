@@ -570,7 +570,7 @@ to {
     height: 15em;
     margin: 0 auto;
 
-    transform: translateY(-1.5%);
+    /* transform: translateY(-1.5%); */
     z-index: 1001;
 }
 
@@ -585,7 +585,7 @@ to {
     width: 60em;
     height: 35em;
     margin: 0 auto;
-    transform: translateY(-1.5vw);
+    transform: translateY(-1.5%);
 }
 
 .topVideo .topYoutube{
