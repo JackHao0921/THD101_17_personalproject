@@ -695,6 +695,8 @@ footer .footerContent{
     display: flex;
     background: linear-gradient(90deg, #555, #838383, #555);
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 10;
 }
 
 .aboutUsDescBox .brandImgBox{
